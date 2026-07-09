@@ -1,94 +1,94 @@
 {
-  "generated_at": "2026-07-09T06:30:41.695563+00:00",
+  "generated_at": "2026-07-09T07:57:50.106391+00:00",
   "tickers": {
     "000660.KS": {
       "ticker": "000660.KS",
-      "price": 2174000.0,
+      "price": 2186000.0,
       "prev_close": 2187000.0,
-      "change_pct": -0.59,
+      "change_pct": -0.05,
       "currency": "KRW",
-      "market_time": 1783577334,
+      "market_time": 1783578609,
       "ok": true
     },
     "005380.KS": {
       "ticker": "005380.KS",
-      "price": 441500.0,
+      "price": 445500.0,
       "prev_close": 482000.0,
-      "change_pct": -8.4,
+      "change_pct": -7.57,
       "currency": "KRW",
-      "market_time": 1783577335,
+      "market_time": 1783578750,
       "ok": true
     },
     "005490.KS": {
       "ticker": "005490.KS",
-      "price": 298500.0,
+      "price": 297000.0,
       "prev_close": 317500.0,
-      "change_pct": -5.98,
+      "change_pct": -6.46,
       "currency": "KRW",
-      "market_time": 1783577335,
+      "market_time": 1783578618,
       "ok": true
     },
     "005930.KS": {
       "ticker": "005930.KS",
-      "price": 277500.0,
+      "price": 278000.0,
       "prev_close": 286000.0,
-      "change_pct": -2.97,
+      "change_pct": -2.8,
       "currency": "KRW",
-      "market_time": 1783577336,
+      "market_time": 1783578602,
       "ok": true
     },
     "006400.KS": {
       "ticker": "006400.KS",
-      "price": 400000.0,
+      "price": 401500.0,
       "prev_close": 470500.0,
-      "change_pct": -14.98,
+      "change_pct": -14.67,
       "currency": "KRW",
-      "market_time": 1783577337,
+      "market_time": 1783578630,
       "ok": true
     },
     "009150.KS": {
       "ticker": "009150.KS",
-      "price": 1471000.0,
+      "price": 1493000.0,
       "prev_close": 1926000.0,
-      "change_pct": -23.62,
+      "change_pct": -22.48,
       "currency": "KRW",
-      "market_time": 1783577338,
+      "market_time": 1783578625,
       "ok": true
     },
     "009830.KS": {
       "ticker": "009830.KS",
-      "price": 31250.0,
+      "price": 30800.0,
       "prev_close": 34900.0,
-      "change_pct": -10.46,
+      "change_pct": -11.75,
       "currency": "KRW",
-      "market_time": 1783577338,
+      "market_time": 1783578606,
       "ok": true
     },
     "011200.KS": {
       "ticker": "011200.KS",
-      "price": 19520.0,
+      "price": 19320.0,
       "prev_close": 19100.0,
-      "change_pct": 2.2,
+      "change_pct": 1.15,
       "currency": "KRW",
-      "market_time": 1783577339,
+      "market_time": 1783578601,
       "ok": true
     },
     "034220.KS": {
       "ticker": "034220.KS",
-      "price": 10550.0,
+      "price": 10680.0,
       "prev_close": 10980.0,
-      "change_pct": -3.92,
+      "change_pct": -2.73,
       "currency": "KRW",
-      "market_time": 1783577340,
+      "market_time": 1783578765,
       "ok": true
     },
     "105560.KS": {
       "ticker": "105560.KS",
-      "price": 172900.0,
+      "price": 171400.0,
       "prev_close": 165000.0,
-      "change_pct": 4.79,
+      "change_pct": 3.88,
       "currency": "KRW",
-      "market_time": 1783577340,
+      "market_time": 1783578613,
       "ok": true
     },
     "1536.TW": {
@@ -129,11 +129,11 @@
     },
     "207940.KS": {
       "ticker": "207940.KS",
-      "price": 1331000.0,
+      "price": 1325000.0,
       "prev_close": 1406000.0,
-      "change_pct": -5.33,
+      "change_pct": -5.76,
       "currency": "KRW",
-      "market_time": 1783577343,
+      "market_time": 1783578614,
       "ok": true
     },
     "2201.TW": {
@@ -372,11 +372,11 @@
     },
     "285A.T": {
       "ticker": "285A.T",
-      "price": 78440.0,
+      "price": 77860.0,
       "prev_close": 83300.0,
-      "change_pct": -5.83,
+      "change_pct": -6.53,
       "currency": "JPY",
-      "market_time": 1783577664,
+      "market_time": 1783578600,
       "ok": true
     },
     "2881.TW": {
@@ -500,11 +500,11 @@
     },
     "3436.T": {
       "ticker": "3436.T",
-      "price": 4543.0,
+      "price": 4544.0,
       "prev_close": 5094.0,
-      "change_pct": -10.82,
+      "change_pct": -10.8,
       "currency": "JPY",
-      "market_time": 1783577671,
+      "market_time": 1783578600,
       "ok": true
     },
     "3481.TW": {
@@ -545,20 +545,20 @@
     },
     "373220.KS": {
       "ticker": "373220.KS",
-      "price": 315500.0,
+      "price": 313500.0,
       "prev_close": 354000.0,
-      "change_pct": -10.88,
+      "change_pct": -11.44,
       "currency": "KRW",
-      "market_time": 1783577381,
+      "market_time": 1783578616,
       "ok": true
     },
     "4063.T": {
       "ticker": "4063.T",
-      "price": 6956.0,
+      "price": 7010.0,
       "prev_close": 6958.0,
-      "change_pct": -0.03,
+      "change_pct": 0.75,
       "currency": "JPY",
-      "market_time": 1783577681,
+      "market_time": 1783578600,
       "ok": true
     },
     "4105.TW": {
@@ -582,11 +582,11 @@
     },
     "4502.T": {
       "ticker": "4502.T",
-      "price": 5372.0,
+      "price": 5398.0,
       "prev_close": 5359.0,
-      "change_pct": 0.24,
+      "change_pct": 0.73,
       "currency": "JPY",
-      "market_time": 1783577685,
+      "market_time": 1783578600,
       "ok": true
     },
     "4938.TW": {
@@ -618,11 +618,11 @@
     },
     "5401.T": {
       "ticker": "5401.T",
-      "price": 553.0,
+      "price": 556.0,
       "prev_close": 548.2,
-      "change_pct": 0.88,
+      "change_pct": 1.42,
       "currency": "JPY",
-      "market_time": 1783577689,
+      "market_time": 1783578600,
       "ok": true
     },
     "5443.TW": {
@@ -713,29 +713,29 @@
     },
     "6740.T": {
       "ticker": "6740.T",
-      "price": 51.0,
+      "price": 50.0,
       "prev_close": 53.0,
-      "change_pct": -3.77,
+      "change_pct": -5.66,
       "currency": "JPY",
-      "market_time": 1783577707,
+      "market_time": 1783578600,
       "ok": true
     },
     "6752.T": {
       "ticker": "6752.T",
-      "price": 4453.0,
+      "price": 4455.0,
       "prev_close": 4522.0,
-      "change_pct": -1.53,
+      "change_pct": -1.48,
       "currency": "JPY",
-      "market_time": 1783577706,
+      "market_time": 1783578600,
       "ok": true
     },
     "6762.T": {
       "ticker": "6762.T",
-      "price": 3387.0,
+      "price": 3382.0,
       "prev_close": 3699.0,
-      "change_pct": -8.43,
+      "change_pct": -8.57,
       "currency": "JPY",
-      "market_time": 1783577709,
+      "market_time": 1783578600,
       "ok": true
     },
     "6770.TW": {
@@ -749,29 +749,29 @@
     },
     "6981.T": {
       "ticker": "6981.T",
-      "price": 9398.0,
+      "price": 9475.0,
       "prev_close": 11080.0,
-      "change_pct": -15.18,
+      "change_pct": -14.49,
       "currency": "JPY",
-      "market_time": 1783577711,
+      "market_time": 1783578600,
       "ok": true
     },
     "7203.T": {
       "ticker": "7203.T",
-      "price": 2821.0,
+      "price": 2824.0,
       "prev_close": 2828.0,
-      "change_pct": -0.25,
+      "change_pct": -0.14,
       "currency": "JPY",
-      "market_time": 1783577712,
+      "market_time": 1783578600,
       "ok": true
     },
     "7267.T": {
       "ticker": "7267.T",
-      "price": 1504.0,
+      "price": 1502.0,
       "prev_close": 1550.0,
-      "change_pct": -2.97,
+      "change_pct": -3.1,
       "currency": "JPY",
-      "market_time": 1783577712,
+      "market_time": 1783578600,
       "ok": true
     },
     "8033.TWO": {
@@ -785,11 +785,11 @@
     },
     "8035.T": {
       "ticker": "8035.T",
-      "price": 70970.0,
+      "price": 71060.0,
       "prev_close": 73200.0,
-      "change_pct": -3.05,
+      "change_pct": -2.92,
       "currency": "JPY",
-      "market_time": 1783577713,
+      "market_time": 1783578600,
       "ok": true
     },
     "8046.TW": {
@@ -822,29 +822,29 @@
     },
     "8306.T": {
       "ticker": "8306.T",
-      "price": 3407.0,
+      "price": 3414.0,
       "prev_close": 3326.0,
-      "change_pct": 2.44,
+      "change_pct": 2.65,
       "currency": "JPY",
-      "market_time": 1783577716,
+      "market_time": 1783578600,
       "ok": true
     },
     "9104.T": {
       "ticker": "9104.T",
-      "price": 5471.0,
+      "price": 5478.0,
       "prev_close": 5193.0,
-      "change_pct": 5.35,
+      "change_pct": 5.49,
       "currency": "JPY",
-      "market_time": 1783577717,
+      "market_time": 1783578600,
       "ok": true
     },
     "9107.T": {
       "ticker": "9107.T",
-      "price": 2588.5,
+      "price": 2581.0,
       "prev_close": 2543.5,
-      "change_pct": 1.77,
+      "change_pct": 1.47,
       "currency": "JPY",
-      "market_time": 1783577716,
+      "market_time": 1783578600,
       "ok": true
     },
     "AMAT": {
