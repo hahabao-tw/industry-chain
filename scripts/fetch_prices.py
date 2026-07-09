@@ -14,6 +14,10 @@ Design notes (matches tw-margin-table / tw-market-dashboard patterns):
   small delay between requests to avoid being rate-limited.
 - A ticker that fails after retries is recorded with price=None rather than
   crashing the whole run, so one bad symbol doesn't block the other ~124.
+- prev_close is derived from the daily close series, NOT from the chart meta:
+  meta.previousClose is absent (None) on this endpoint for all four markets,
+  and meta.chartPreviousClose is the close before the whole 5d window, which
+  silently turns change_pct into a ~5-trading-day change.
 
 Run: python3 scripts/fetch_prices.py
 """
@@ -54,6 +58,32 @@ def load_tickers():
     return sorted(tickers)
 
 
+def derive_prev_close(result, meta):
+    """Previous-session close from the daily close series.
+
+    The last valid bar is the session regularMarketPrice belongs to, so the
+    bar before it is the previous close. If the last bar is already an older
+    session than regularMarketTime (Yahoo sometimes lags the series), that
+    last bar itself is the previous close. Session identity is compared by
+    exchange-local calendar day via meta.gmtoffset.
+    """
+    timestamps = result.get("timestamp") or []
+    quotes = (result.get("indicators", {}).get("quote") or [{}])[0]
+    closes = quotes.get("close") or []
+    valid = [(t, c) for t, c in zip(timestamps, closes) if c is not None]
+    if not valid:
+        return meta.get("previousClose") or meta.get("chartPreviousClose")
+    offset = meta.get("gmtoffset") or 0
+    market_time = meta.get("regularMarketTime")
+    def local_day(ts):
+        return (ts + offset) // 86400
+    if market_time is None or local_day(valid[-1][0]) == local_day(market_time):
+        if len(valid) >= 2:
+            return valid[-2][1]
+        return meta.get("previousClose") or meta.get("chartPreviousClose")
+    return valid[-1][1]
+
+
 def fetch_one(ticker: str):
     url = CHART_URL.format(ticker=ticker)
     last_err = None
@@ -67,7 +97,9 @@ def fetch_one(ticker: str):
                 raise ValueError(f"empty chart result for {ticker}")
             meta = result[0]["meta"]
             price = meta.get("regularMarketPrice")
-            prev_close = meta.get("previousClose") or meta.get("chartPreviousClose")
+            prev_close = derive_prev_close(result[0], meta)
+            if prev_close is not None:
+                prev_close = round(prev_close, 4)
             currency = meta.get("currency")
             market_time = meta.get("regularMarketTime")
             change_pct = None

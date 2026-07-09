@@ -159,10 +159,10 @@
         },
         {
           "name": "群聯",
-          "ticker": "8299.TW",
+          "ticker": "8299.TWO",
           "market": "TW",
           "product": "NAND控制晶片(SSD/隨身碟)",
-          "source": "https://finance.yahoo.com/quote/8299.TW"
+          "source": "https://finance.yahoo.com/quote/8299.TWO"
         }
       ]
     },
@@ -234,17 +234,17 @@
         },
         {
           "name": "弘塑",
-          "ticker": "3131.TW",
+          "ticker": "3131.TWO",
           "market": "TW",
           "product": "濕製程設備與耗材，CoWoS先進封裝相關",
-          "source": "https://finance.yahoo.com/quote/3131.TW"
+          "source": "https://finance.yahoo.com/quote/3131.TWO"
         },
         {
           "name": "均豪",
-          "ticker": "5443.TW",
+          "ticker": "5443.TWO",
           "market": "TW",
           "product": "先進封裝檢測設備、自動化設備",
-          "source": "https://finance.yahoo.com/quote/5443.TW"
+          "source": "https://finance.yahoo.com/quote/5443.TWO"
         },
         {
           "name": "漢唐",
@@ -268,17 +268,17 @@
       "companies": [
         {
           "name": "環球晶",
-          "ticker": "6488.TW",
+          "ticker": "6488.TWO",
           "market": "TW",
           "product": "全球前三大矽晶圓廠",
-          "source": "https://finance.yahoo.com/quote/6488.TW"
+          "source": "https://finance.yahoo.com/quote/6488.TWO"
         },
         {
           "name": "合晶",
-          "ticker": "6182.TW",
+          "ticker": "6182.TWO",
           "market": "TW",
           "product": "矽晶圓、磊晶片",
-          "source": "https://finance.yahoo.com/quote/6182.TW"
+          "source": "https://finance.yahoo.com/quote/6182.TWO"
         },
         {
           "name": "SUMCO",
@@ -419,10 +419,10 @@
         },
         {
           "name": "台燿",
-          "ticker": "6274.TW",
+          "ticker": "6274.TWO",
           "market": "TW",
           "product": "銅箔基板(CCL)，AI伺服器高頻材料",
-          "source": "https://finance.yahoo.com/quote/6274.TW"
+          "source": "https://finance.yahoo.com/quote/6274.TWO"
         },
         {
           "name": "台光電",
@@ -747,10 +747,10 @@
         },
         {
           "name": "元晶",
-          "ticker": "6443.TWO",
+          "ticker": "6443.TW",
           "market": "TW",
           "product": "太陽能電池",
-          "source": "https://finance.yahoo.com/quote/6443.TWO"
+          "source": "https://finance.yahoo.com/quote/6443.TW"
         },
         {
           "name": "Hanwha Solutions",
@@ -898,17 +898,17 @@
         },
         {
           "name": "基亞生技",
-          "ticker": "3176.TW",
+          "ticker": "3176.TWO",
           "market": "TW",
           "product": "高端疫苗母公司，生技投資控股",
-          "source": "https://finance.yahoo.com/quote/3176.TW"
+          "source": "https://finance.yahoo.com/quote/3176.TWO"
         },
         {
           "name": "台灣東洋",
-          "ticker": "4105.TW",
+          "ticker": "4105.TWO",
           "market": "TW",
           "product": "代理/生產流感疫苗，學名藥、癌症用藥",
-          "source": "https://finance.yahoo.com/quote/4105.TW"
+          "source": "https://finance.yahoo.com/quote/4105.TWO"
         },
         {
           "name": "Takeda",
