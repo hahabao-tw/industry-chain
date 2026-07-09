@@ -1,0 +1,985 @@
+{
+  "updated_note": "本檔為公司分組主檔（人工分類，含股票代號）。即時股價由 scripts/fetch_prices.py 每週抓取後寫入 data/latest.json，不存在此檔。",
+  "groups": [
+    {
+      "id": "foundry",
+      "name": "半導體代工",
+      "companies": [
+        {
+          "name": "台積電",
+          "ticker": "2330.TW",
+          "market": "TW",
+          "product": "晶圓代工，先進製程(3nm/2nm)全球領先",
+          "source": "https://finance.yahoo.com/quote/2330.TW"
+        },
+        {
+          "name": "聯電",
+          "ticker": "2303.TW",
+          "market": "TW",
+          "product": "晶圓代工，成熟製程與特殊製程(28nm以上)",
+          "source": "https://finance.yahoo.com/quote/2303.TW"
+        },
+        {
+          "name": "世界先進",
+          "ticker": "5347.TWO",
+          "market": "TW",
+          "product": "晶圓代工，電源管理IC/分離式元件成熟製程",
+          "source": "https://finance.yahoo.com/quote/5347.TWO"
+        },
+        {
+          "name": "力積電",
+          "ticker": "6770.TW",
+          "market": "TW",
+          "product": "晶圓代工，記憶體與邏輯製程雙軌",
+          "source": "https://finance.yahoo.com/quote/6770.TW"
+        },
+        {
+          "name": "GlobalFoundries",
+          "ticker": "GFS",
+          "market": "US",
+          "product": "美系晶圓代工，車用/通訊成熟製程",
+          "source": "https://finance.yahoo.com/quote/GFS"
+        },
+        {
+          "name": "三星電子",
+          "ticker": "005930.KS",
+          "market": "KR",
+          "product": "晶圓代工(Foundry事業部)+記憶體+消費電子",
+          "source": "https://finance.yahoo.com/quote/005930.KS"
+        }
+      ]
+    },
+    {
+      "id": "memory",
+      "name": "記憶體",
+      "companies": [
+        {
+          "name": "美光",
+          "ticker": "MU",
+          "market": "US",
+          "product": "DRAM/NAND Flash記憶體大廠",
+          "source": "https://finance.yahoo.com/quote/MU"
+        },
+        {
+          "name": "南亞科",
+          "ticker": "2408.TW",
+          "market": "TW",
+          "product": "DRAM設計製造",
+          "source": "https://finance.yahoo.com/quote/2408.TW"
+        },
+        {
+          "name": "華邦電",
+          "ticker": "2344.TW",
+          "market": "TW",
+          "product": "利基型DRAM、NOR Flash",
+          "source": "https://finance.yahoo.com/quote/2344.TW"
+        },
+        {
+          "name": "旺宏",
+          "ticker": "2337.TW",
+          "market": "TW",
+          "product": "NOR Flash、ROM記憶體",
+          "source": "https://finance.yahoo.com/quote/2337.TW"
+        },
+        {
+          "name": "十銓",
+          "ticker": "4967.TW",
+          "market": "TW",
+          "product": "記憶體模組、SSD封裝",
+          "source": "https://finance.yahoo.com/quote/4967.TW"
+        },
+        {
+          "name": "Kioxia",
+          "ticker": "285A.T",
+          "market": "JP",
+          "product": "NAND Flash、SSD，原東芝記憶體事業",
+          "source": "https://finance.yahoo.com/quote/285A.T"
+        },
+        {
+          "name": "SK海力士",
+          "ticker": "000660.KS",
+          "market": "KR",
+          "product": "DRAM/NAND，HBM記憶體全球龍頭",
+          "source": "https://finance.yahoo.com/quote/000660.KS"
+        },
+        {
+          "name": "三星電子",
+          "ticker": "005930.KS",
+          "market": "KR",
+          "product": "DRAM/NAND記憶體全球最大廠",
+          "source": "https://finance.yahoo.com/quote/005930.KS"
+        }
+      ]
+    },
+    {
+      "id": "ic_design",
+      "name": "IC設計",
+      "companies": [
+        {
+          "name": "Nvidia",
+          "ticker": "NVDA",
+          "market": "US",
+          "product": "GPU、AI加速晶片",
+          "source": "https://finance.yahoo.com/quote/NVDA"
+        },
+        {
+          "name": "Qualcomm",
+          "ticker": "QCOM",
+          "market": "US",
+          "product": "手機SoC、通訊晶片",
+          "source": "https://finance.yahoo.com/quote/QCOM"
+        },
+        {
+          "name": "AMD",
+          "ticker": "AMD",
+          "market": "US",
+          "product": "CPU/GPU設計",
+          "source": "https://finance.yahoo.com/quote/AMD"
+        },
+        {
+          "name": "聯發科",
+          "ticker": "2454.TW",
+          "market": "TW",
+          "product": "手機晶片、Wi-Fi、車用晶片",
+          "source": "https://finance.yahoo.com/quote/2454.TW"
+        },
+        {
+          "name": "瑞昱",
+          "ticker": "2379.TW",
+          "market": "TW",
+          "product": "網通晶片、音訊/乙太網路控制器",
+          "source": "https://finance.yahoo.com/quote/2379.TW"
+        },
+        {
+          "name": "聯詠",
+          "ticker": "3034.TW",
+          "market": "TW",
+          "product": "面板驅動IC、時序控制器",
+          "source": "https://finance.yahoo.com/quote/3034.TW"
+        },
+        {
+          "name": "群聯",
+          "ticker": "8299.TW",
+          "market": "TW",
+          "product": "NAND控制晶片(SSD/隨身碟)",
+          "source": "https://finance.yahoo.com/quote/8299.TW"
+        }
+      ]
+    },
+    {
+      "id": "osat",
+      "name": "封裝測試",
+      "companies": [
+        {
+          "name": "Amkor",
+          "ticker": "AMKR",
+          "market": "US",
+          "product": "全球第二大封測廠",
+          "source": "https://finance.yahoo.com/quote/AMKR"
+        },
+        {
+          "name": "日月光投控",
+          "ticker": "3711.TW",
+          "market": "TW",
+          "product": "全球最大封測集團，先進封裝(SiP/WLP)",
+          "source": "https://finance.yahoo.com/quote/3711.TW"
+        },
+        {
+          "name": "京元電子",
+          "ticker": "2449.TW",
+          "market": "TW",
+          "product": "記憶體/混合訊號IC測試",
+          "source": "https://finance.yahoo.com/quote/2449.TW"
+        },
+        {
+          "name": "力成",
+          "ticker": "6239.TW",
+          "market": "TW",
+          "product": "記憶體封測、SiP系統封裝",
+          "source": "https://finance.yahoo.com/quote/6239.TW"
+        },
+        {
+          "name": "南茂",
+          "ticker": "8150.TW",
+          "market": "TW",
+          "product": "驅動IC、記憶體封測",
+          "source": "https://finance.yahoo.com/quote/8150.TW"
+        }
+      ]
+    },
+    {
+      "id": "semi_equipment",
+      "name": "半導體設備",
+      "companies": [
+        {
+          "name": "Applied Materials",
+          "ticker": "AMAT",
+          "market": "US",
+          "product": "半導體製程設備龍頭",
+          "source": "https://finance.yahoo.com/quote/AMAT"
+        },
+        {
+          "name": "Lam Research",
+          "ticker": "LRCX",
+          "market": "US",
+          "product": "蝕刻/薄膜沉積設備",
+          "source": "https://finance.yahoo.com/quote/LRCX"
+        },
+        {
+          "name": "KLA",
+          "ticker": "KLAC",
+          "market": "US",
+          "product": "製程檢測設備",
+          "source": "https://finance.yahoo.com/quote/KLAC"
+        },
+        {
+          "name": "弘塑",
+          "ticker": "3131.TW",
+          "market": "TW",
+          "product": "濕製程設備與耗材，CoWoS先進封裝相關",
+          "source": "https://finance.yahoo.com/quote/3131.TW"
+        },
+        {
+          "name": "均豪",
+          "ticker": "5443.TW",
+          "market": "TW",
+          "product": "先進封裝檢測設備、自動化設備",
+          "source": "https://finance.yahoo.com/quote/5443.TW"
+        },
+        {
+          "name": "漢唐",
+          "ticker": "2404.TW",
+          "market": "TW",
+          "product": "無塵室工程、廠務系統整合",
+          "source": "https://finance.yahoo.com/quote/2404.TW"
+        },
+        {
+          "name": "東京威力科創",
+          "ticker": "8035.T",
+          "market": "JP",
+          "product": "半導體製程設備日系大廠",
+          "source": "https://finance.yahoo.com/quote/8035.T"
+        }
+      ]
+    },
+    {
+      "id": "silicon_wafer",
+      "name": "矽晶圓",
+      "companies": [
+        {
+          "name": "環球晶",
+          "ticker": "6488.TW",
+          "market": "TW",
+          "product": "全球前三大矽晶圓廠",
+          "source": "https://finance.yahoo.com/quote/6488.TW"
+        },
+        {
+          "name": "合晶",
+          "ticker": "6182.TW",
+          "market": "TW",
+          "product": "矽晶圓、磊晶片",
+          "source": "https://finance.yahoo.com/quote/6182.TW"
+        },
+        {
+          "name": "SUMCO",
+          "ticker": "3436.T",
+          "market": "JP",
+          "product": "全球前三大矽晶圓廠",
+          "source": "https://finance.yahoo.com/quote/3436.T"
+        },
+        {
+          "name": "信越化學",
+          "ticker": "4063.T",
+          "market": "JP",
+          "product": "全球最大矽晶圓廠+化工材料",
+          "source": "https://finance.yahoo.com/quote/4063.T"
+        }
+      ]
+    },
+    {
+      "id": "display",
+      "name": "面板/顯示",
+      "companies": [
+        {
+          "name": "友達",
+          "ticker": "2409.TW",
+          "market": "TW",
+          "product": "TFT-LCD面板、Mini LED",
+          "source": "https://finance.yahoo.com/quote/2409.TW"
+        },
+        {
+          "name": "群創",
+          "ticker": "3481.TW",
+          "market": "TW",
+          "product": "TFT-LCD面板、玻璃基板/FOPLP先進封裝",
+          "source": "https://finance.yahoo.com/quote/3481.TW"
+        },
+        {
+          "name": "彩晶",
+          "ticker": "6116.TW",
+          "market": "TW",
+          "product": "中小尺寸面板",
+          "source": "https://finance.yahoo.com/quote/6116.TW"
+        },
+        {
+          "name": "LG Display",
+          "ticker": "034220.KS",
+          "market": "KR",
+          "product": "OLED/LCD面板大廠",
+          "source": "https://finance.yahoo.com/quote/034220.KS"
+        },
+        {
+          "name": "JDI",
+          "ticker": "6740.T",
+          "market": "JP",
+          "product": "中小尺寸面板(手機/車用)",
+          "source": "https://finance.yahoo.com/quote/6740.T"
+        }
+      ]
+    },
+    {
+      "id": "passive_components",
+      "name": "被動元件",
+      "companies": [
+        {
+          "name": "Vishay",
+          "ticker": "VSH",
+          "market": "US",
+          "product": "被動元件、分離式元件",
+          "source": "https://finance.yahoo.com/quote/VSH"
+        },
+        {
+          "name": "國巨",
+          "ticker": "2327.TW",
+          "market": "TW",
+          "product": "MLCC電容全球龍頭之一",
+          "source": "https://finance.yahoo.com/quote/2327.TW"
+        },
+        {
+          "name": "華新科",
+          "ticker": "2492.TW",
+          "market": "TW",
+          "product": "MLCC電容、電阻",
+          "source": "https://finance.yahoo.com/quote/2492.TW"
+        },
+        {
+          "name": "禾伸堂",
+          "ticker": "3026.TW",
+          "market": "TW",
+          "product": "MLCC、電感",
+          "source": "https://finance.yahoo.com/quote/3026.TW"
+        },
+        {
+          "name": "村田製作所",
+          "ticker": "6981.T",
+          "market": "JP",
+          "product": "MLCC全球龍頭",
+          "source": "https://finance.yahoo.com/quote/6981.T"
+        },
+        {
+          "name": "TDK",
+          "ticker": "6762.T",
+          "market": "JP",
+          "product": "被動元件、電池、感測器",
+          "source": "https://finance.yahoo.com/quote/6762.T"
+        },
+        {
+          "name": "三星電機",
+          "ticker": "009150.KS",
+          "market": "KR",
+          "product": "MLCC、相機模組",
+          "source": "https://finance.yahoo.com/quote/009150.KS"
+        }
+      ]
+    },
+    {
+      "id": "pcb",
+      "name": "PCB/軟板/銅箔基板",
+      "companies": [
+        {
+          "name": "TTM Technologies",
+          "ticker": "TTMI",
+          "market": "US",
+          "product": "PCB(國防/航太/通訊)",
+          "source": "https://finance.yahoo.com/quote/TTMI"
+        },
+        {
+          "name": "欣興",
+          "ticker": "3037.TW",
+          "market": "TW",
+          "product": "PCB、IC載板",
+          "source": "https://finance.yahoo.com/quote/3037.TW"
+        },
+        {
+          "name": "健鼎",
+          "ticker": "3044.TW",
+          "market": "TW",
+          "product": "PCB(車用/伺服器)",
+          "source": "https://finance.yahoo.com/quote/3044.TW"
+        },
+        {
+          "name": "台燿",
+          "ticker": "6274.TW",
+          "market": "TW",
+          "product": "銅箔基板(CCL)，AI伺服器高頻材料",
+          "source": "https://finance.yahoo.com/quote/6274.TW"
+        },
+        {
+          "name": "台光電",
+          "ticker": "2383.TW",
+          "market": "TW",
+          "product": "銅箔基板(CCL)",
+          "source": "https://finance.yahoo.com/quote/2383.TW"
+        },
+        {
+          "name": "南電",
+          "ticker": "8046.TW",
+          "market": "TW",
+          "product": "ABF/BT載板",
+          "source": "https://finance.yahoo.com/quote/8046.TW"
+        }
+      ]
+    },
+    {
+      "id": "ems_assembly",
+      "name": "蘋果組裝/EMS代工",
+      "companies": [
+        {
+          "name": "Jabil",
+          "ticker": "JBL",
+          "market": "US",
+          "product": "電子代工製造服務(EMS)",
+          "source": "https://finance.yahoo.com/quote/JBL"
+        },
+        {
+          "name": "鴻海",
+          "ticker": "2317.TW",
+          "market": "TW",
+          "product": "全球最大EMS代工，蘋果組裝、AI伺服器",
+          "source": "https://finance.yahoo.com/quote/2317.TW"
+        },
+        {
+          "name": "和碩",
+          "ticker": "4938.TW",
+          "market": "TW",
+          "product": "蘋果組裝、筆電代工",
+          "source": "https://finance.yahoo.com/quote/4938.TW"
+        },
+        {
+          "name": "仁寶",
+          "ticker": "2324.TW",
+          "market": "TW",
+          "product": "筆電/穿戴裝置代工",
+          "source": "https://finance.yahoo.com/quote/2324.TW"
+        }
+      ]
+    },
+    {
+      "id": "ai_server",
+      "name": "AI伺服器/雲端硬體",
+      "companies": [
+        {
+          "name": "Nvidia",
+          "ticker": "NVDA",
+          "market": "US",
+          "product": "AI GPU/伺服器平台",
+          "source": "https://finance.yahoo.com/quote/NVDA"
+        },
+        {
+          "name": "Dell",
+          "ticker": "DELL",
+          "market": "US",
+          "product": "伺服器/資料中心硬體",
+          "source": "https://finance.yahoo.com/quote/DELL"
+        },
+        {
+          "name": "Super Micro",
+          "ticker": "SMCI",
+          "market": "US",
+          "product": "AI伺服器系統整合",
+          "source": "https://finance.yahoo.com/quote/SMCI"
+        },
+        {
+          "name": "緯穎",
+          "ticker": "6669.TW",
+          "market": "TW",
+          "product": "雲端伺服器ODM(北美CSP客戶)",
+          "source": "https://finance.yahoo.com/quote/6669.TW"
+        },
+        {
+          "name": "廣達",
+          "ticker": "2382.TW",
+          "market": "TW",
+          "product": "筆電代工、AI伺服器",
+          "source": "https://finance.yahoo.com/quote/2382.TW"
+        },
+        {
+          "name": "緯創",
+          "ticker": "3231.TW",
+          "market": "TW",
+          "product": "筆電/AI伺服器代工",
+          "source": "https://finance.yahoo.com/quote/3231.TW"
+        },
+        {
+          "name": "英業達",
+          "ticker": "2356.TW",
+          "market": "TW",
+          "product": "伺服器代工、筆電代工",
+          "source": "https://finance.yahoo.com/quote/2356.TW"
+        }
+      ]
+    },
+    {
+      "id": "thermal",
+      "name": "散熱/機房設備",
+      "companies": [
+        {
+          "name": "Vertiv",
+          "ticker": "VRT",
+          "market": "US",
+          "product": "資料中心電力/散熱基礎設施",
+          "source": "https://finance.yahoo.com/quote/VRT"
+        },
+        {
+          "name": "雙鴻",
+          "ticker": "3324.TWO",
+          "market": "TW",
+          "product": "液冷散熱、AI伺服器散熱模組",
+          "source": "https://finance.yahoo.com/quote/3324.TWO"
+        },
+        {
+          "name": "建準",
+          "ticker": "2421.TW",
+          "market": "TW",
+          "product": "散熱風扇、散熱模組",
+          "source": "https://finance.yahoo.com/quote/2421.TW"
+        },
+        {
+          "name": "奇鋐",
+          "ticker": "3017.TW",
+          "market": "TW",
+          "product": "散熱模組、液冷系統",
+          "source": "https://finance.yahoo.com/quote/3017.TW"
+        }
+      ]
+    },
+    {
+      "id": "power_equipment",
+      "name": "電源/電力設備",
+      "companies": [
+        {
+          "name": "Eaton",
+          "ticker": "ETN",
+          "market": "US",
+          "product": "電力管理設備",
+          "source": "https://finance.yahoo.com/quote/ETN"
+        },
+        {
+          "name": "台達電",
+          "ticker": "2308.TW",
+          "market": "TW",
+          "product": "電源供應器、資料中心電源、電動車充電",
+          "source": "https://finance.yahoo.com/quote/2308.TW"
+        },
+        {
+          "name": "光寶科",
+          "ticker": "2301.TW",
+          "market": "TW",
+          "product": "電源供應器、LED",
+          "source": "https://finance.yahoo.com/quote/2301.TW"
+        }
+      ]
+    },
+    {
+      "id": "shipping",
+      "name": "航運/貨櫃",
+      "companies": [
+        {
+          "name": "長榮",
+          "ticker": "2603.TW",
+          "market": "TW",
+          "product": "貨櫃航運全球前十大",
+          "source": "https://finance.yahoo.com/quote/2603.TW"
+        },
+        {
+          "name": "陽明",
+          "ticker": "2609.TW",
+          "market": "TW",
+          "product": "貨櫃航運",
+          "source": "https://finance.yahoo.com/quote/2609.TW"
+        },
+        {
+          "name": "萬海",
+          "ticker": "2615.TW",
+          "market": "TW",
+          "product": "貨櫃航運(亞洲區間線為主)",
+          "source": "https://finance.yahoo.com/quote/2615.TW"
+        },
+        {
+          "name": "HMM",
+          "ticker": "011200.KS",
+          "market": "KR",
+          "product": "韓國最大貨櫃航運",
+          "source": "https://finance.yahoo.com/quote/011200.KS"
+        },
+        {
+          "name": "商船三井",
+          "ticker": "9104.T",
+          "market": "JP",
+          "product": "日本大型航運集團",
+          "source": "https://finance.yahoo.com/quote/9104.T"
+        },
+        {
+          "name": "川崎汽船",
+          "ticker": "9107.T",
+          "market": "JP",
+          "product": "日本航運集團",
+          "source": "https://finance.yahoo.com/quote/9107.T"
+        }
+      ]
+    },
+    {
+      "id": "steel",
+      "name": "鋼鐵",
+      "companies": [
+        {
+          "name": "Nucor",
+          "ticker": "NUE",
+          "market": "US",
+          "product": "美國最大鋼鐵廠",
+          "source": "https://finance.yahoo.com/quote/NUE"
+        },
+        {
+          "name": "中鋼",
+          "ticker": "2002.TW",
+          "market": "TW",
+          "product": "台灣最大鋼鐵廠，扁鋼胚/鋼捲",
+          "source": "https://finance.yahoo.com/quote/2002.TW"
+        },
+        {
+          "name": "中鴻",
+          "ticker": "2014.TW",
+          "market": "TW",
+          "product": "熱軋鋼捲(中鋼集團)",
+          "source": "https://finance.yahoo.com/quote/2014.TW"
+        },
+        {
+          "name": "燁輝",
+          "ticker": "2023.TW",
+          "market": "TW",
+          "product": "鍍鋅鋼板",
+          "source": "https://finance.yahoo.com/quote/2023.TW"
+        },
+        {
+          "name": "日本製鐵",
+          "ticker": "5401.T",
+          "market": "JP",
+          "product": "日本最大鋼鐵廠",
+          "source": "https://finance.yahoo.com/quote/5401.T"
+        },
+        {
+          "name": "Posco Holdings",
+          "ticker": "005490.KS",
+          "market": "KR",
+          "product": "韓國最大鋼鐵廠",
+          "source": "https://finance.yahoo.com/quote/005490.KS"
+        }
+      ]
+    },
+    {
+      "id": "defense",
+      "name": "軍工/國防",
+      "companies": [
+        {
+          "name": "Lockheed Martin",
+          "ticker": "LMT",
+          "market": "US",
+          "product": "戰機、飛彈系統",
+          "source": "https://finance.yahoo.com/quote/LMT"
+        },
+        {
+          "name": "RTX",
+          "ticker": "RTX",
+          "market": "US",
+          "product": "飛彈系統、航太引擎(原Raytheon)",
+          "source": "https://finance.yahoo.com/quote/RTX"
+        },
+        {
+          "name": "Ondas Holdings",
+          "ticker": "ONDS",
+          "market": "US",
+          "product": "軍用無人機、自動化系統",
+          "source": "https://finance.yahoo.com/quote/ONDS"
+        },
+        {
+          "name": "漢翔",
+          "ticker": "2634.TW",
+          "market": "TW",
+          "product": "航太國防，戰機/民航機零組件",
+          "source": "https://finance.yahoo.com/quote/2634.TW"
+        },
+        {
+          "name": "雷虎科技",
+          "ticker": "8033.TWO",
+          "market": "TW",
+          "product": "軍用/商用無人機",
+          "source": "https://finance.yahoo.com/quote/8033.TWO"
+        }
+      ]
+    },
+    {
+      "id": "solar",
+      "name": "太陽能",
+      "companies": [
+        {
+          "name": "First Solar",
+          "ticker": "FSLR",
+          "market": "US",
+          "product": "薄膜太陽能模組",
+          "source": "https://finance.yahoo.com/quote/FSLR"
+        },
+        {
+          "name": "聯合再生",
+          "ticker": "3576.TW",
+          "market": "TW",
+          "product": "太陽能電池/模組",
+          "source": "https://finance.yahoo.com/quote/3576.TW"
+        },
+        {
+          "name": "元晶",
+          "ticker": "6443.TWO",
+          "market": "TW",
+          "product": "太陽能電池",
+          "source": "https://finance.yahoo.com/quote/6443.TWO"
+        },
+        {
+          "name": "Hanwha Solutions",
+          "ticker": "009830.KS",
+          "market": "KR",
+          "product": "太陽能模組、化學",
+          "source": "https://finance.yahoo.com/quote/009830.KS"
+        }
+      ]
+    },
+    {
+      "id": "ev_battery",
+      "name": "電動車/電池",
+      "companies": [
+        {
+          "name": "Tesla",
+          "ticker": "TSLA",
+          "market": "US",
+          "product": "電動車整車廠",
+          "source": "https://finance.yahoo.com/quote/TSLA"
+        },
+        {
+          "name": "貿聯-KY",
+          "ticker": "3665.TW",
+          "market": "TW",
+          "product": "電動車線束/連接器",
+          "source": "https://finance.yahoo.com/quote/3665.TW"
+        },
+        {
+          "name": "和大",
+          "ticker": "1536.TW",
+          "market": "TW",
+          "product": "汽車/電動車傳動零件",
+          "source": "https://finance.yahoo.com/quote/1536.TW"
+        },
+        {
+          "name": "LG Energy Solution",
+          "ticker": "373220.KS",
+          "market": "KR",
+          "product": "電動車電池全球前三大",
+          "source": "https://finance.yahoo.com/quote/373220.KS"
+        },
+        {
+          "name": "Samsung SDI",
+          "ticker": "006400.KS",
+          "market": "KR",
+          "product": "電動車電池、儲能系統",
+          "source": "https://finance.yahoo.com/quote/006400.KS"
+        },
+        {
+          "name": "Panasonic",
+          "ticker": "6752.T",
+          "market": "JP",
+          "product": "電動車電池(特斯拉主要供應商)",
+          "source": "https://finance.yahoo.com/quote/6752.T"
+        }
+      ]
+    },
+    {
+      "id": "automobile",
+      "name": "汽車",
+      "companies": [
+        {
+          "name": "GM",
+          "ticker": "GM",
+          "market": "US",
+          "product": "美系整車廠",
+          "source": "https://finance.yahoo.com/quote/GM"
+        },
+        {
+          "name": "Ford",
+          "ticker": "F",
+          "market": "US",
+          "product": "美系整車廠",
+          "source": "https://finance.yahoo.com/quote/F"
+        },
+        {
+          "name": "裕隆",
+          "ticker": "2201.TW",
+          "market": "TW",
+          "product": "整車製造(Nissan/Luxgen)",
+          "source": "https://finance.yahoo.com/quote/2201.TW"
+        },
+        {
+          "name": "和泰車",
+          "ticker": "2207.TW",
+          "market": "TW",
+          "product": "Toyota台灣總代理",
+          "source": "https://finance.yahoo.com/quote/2207.TW"
+        },
+        {
+          "name": "Toyota",
+          "ticker": "7203.T",
+          "market": "JP",
+          "product": "全球最大車廠之一",
+          "source": "https://finance.yahoo.com/quote/7203.T"
+        },
+        {
+          "name": "Honda",
+          "ticker": "7267.T",
+          "market": "JP",
+          "product": "汽車/機車製造",
+          "source": "https://finance.yahoo.com/quote/7267.T"
+        },
+        {
+          "name": "Hyundai Motor",
+          "ticker": "005380.KS",
+          "market": "KR",
+          "product": "韓國最大車廠",
+          "source": "https://finance.yahoo.com/quote/005380.KS"
+        }
+      ]
+    },
+    {
+      "id": "biotech_vaccine",
+      "name": "生技/疫苗",
+      "companies": [
+        {
+          "name": "Pfizer",
+          "ticker": "PFE",
+          "market": "US",
+          "product": "疫苗、藥品大廠",
+          "source": "https://finance.yahoo.com/quote/PFE"
+        },
+        {
+          "name": "Moderna",
+          "ticker": "MRNA",
+          "market": "US",
+          "product": "mRNA疫苗技術",
+          "source": "https://finance.yahoo.com/quote/MRNA"
+        },
+        {
+          "name": "高端疫苗",
+          "ticker": "6547.TWO",
+          "market": "TW",
+          "product": "COVID-19疫苗、四價流感疫苗(授權自韓國GC Pharma)、腸病毒71型疫苗",
+          "source": "https://finance.yahoo.com/quote/6547.TWO"
+        },
+        {
+          "name": "國光生技",
+          "ticker": "4142.TW",
+          "market": "TW",
+          "product": "流感疫苗、日本腦炎疫苗、破傷風類毒素",
+          "source": "https://finance.yahoo.com/quote/4142.TW"
+        },
+        {
+          "name": "基亞生技",
+          "ticker": "3176.TW",
+          "market": "TW",
+          "product": "高端疫苗母公司，生技投資控股",
+          "source": "https://finance.yahoo.com/quote/3176.TW"
+        },
+        {
+          "name": "台灣東洋",
+          "ticker": "4105.TW",
+          "market": "TW",
+          "product": "代理/生產流感疫苗，學名藥、癌症用藥",
+          "source": "https://finance.yahoo.com/quote/4105.TW"
+        },
+        {
+          "name": "Takeda",
+          "ticker": "4502.T",
+          "market": "JP",
+          "product": "日本最大製藥廠",
+          "source": "https://finance.yahoo.com/quote/4502.T"
+        },
+        {
+          "name": "Samsung Biologics",
+          "ticker": "207940.KS",
+          "market": "KR",
+          "product": "生物製劑委託開發生產(CDMO)",
+          "source": "https://finance.yahoo.com/quote/207940.KS"
+        }
+      ]
+    },
+    {
+      "id": "banking",
+      "name": "銀行金融",
+      "companies": [
+        {
+          "name": "JPMorgan",
+          "ticker": "JPM",
+          "market": "US",
+          "product": "美國最大銀行",
+          "source": "https://finance.yahoo.com/quote/JPM"
+        },
+        {
+          "name": "中信金",
+          "ticker": "2891.TW",
+          "market": "TW",
+          "product": "銀行/證券/人壽金控",
+          "source": "https://finance.yahoo.com/quote/2891.TW"
+        },
+        {
+          "name": "富邦金",
+          "ticker": "2881.TW",
+          "market": "TW",
+          "product": "銀行/證券/人壽金控",
+          "source": "https://finance.yahoo.com/quote/2881.TW"
+        },
+        {
+          "name": "國泰金",
+          "ticker": "2882.TW",
+          "market": "TW",
+          "product": "銀行/證券/人壽金控",
+          "source": "https://finance.yahoo.com/quote/2882.TW"
+        },
+        {
+          "name": "兆豐金",
+          "ticker": "2886.TW",
+          "market": "TW",
+          "product": "銀行/證券金控，官股",
+          "source": "https://finance.yahoo.com/quote/2886.TW"
+        },
+        {
+          "name": "三菱UFJ",
+          "ticker": "8306.T",
+          "market": "JP",
+          "product": "日本最大金融集團",
+          "source": "https://finance.yahoo.com/quote/8306.T"
+        },
+        {
+          "name": "KB Financial",
+          "ticker": "105560.KS",
+          "market": "KR",
+          "product": "韓國最大金融集團",
+          "source": "https://finance.yahoo.com/quote/105560.KS"
+        }
+      ]
+    }
+  ]
+}

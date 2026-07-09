@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台美日韓產業關聯儀表板</title>
+<style>
+  :root{
+    --bg: #14161b;
+    --panel: #1b1e25;
+    --panel-hover: #21242c;
+    --border: #2a2d36;
+    --text: #e7e5e0;
+    --text-dim: #8b8f9a;
+    --text-faint: #5b5f6a;
+    --gold: #c9a227;
+    --gold-dim: #7a6a2f;
+    --up: #e0454a;      /* Asian convention: red = up */
+    --down: #22a06b;    /* Asian convention: green = down */
+    --flat: #8b8f9a;
+    --mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'Consolas', 'Menlo', monospace;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans TC', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.5;
+    padding-bottom: 4rem;
+  }
+  header{
+    position: sticky; top:0; z-index: 10;
+    background: rgba(20,22,27,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 1.1rem 1.5rem;
+  }
+  .header-row{
+    display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;
+    max-width: 1200px; margin: 0 auto;
+  }
+  h1{
+    font-size: 1.15rem; font-weight: 700; letter-spacing: 0.02em;
+    display:flex; align-items:center; gap:0.5rem;
+  }
+  h1 .bar{ width:3px; height:1.1rem; background:var(--gold); display:inline-block; }
+  .meta{ font-size: 0.78rem; color: var(--text-dim); font-family: var(--mono); }
+  .legend{ font-size:0.72rem; color:var(--text-faint); margin-top:0.35rem; }
+  .legend span{ margin-right: 1rem; }
+  .dot{ display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:4px; }
+
+  .toolbar{
+    max-width: 1200px; margin: 1.3rem auto 0.5rem; padding: 0 1.5rem;
+    display:flex; gap:0.6rem; flex-wrap:wrap; align-items:center;
+  }
+  #search{
+    flex: 1 1 260px;
+    background: var(--panel); border:1px solid var(--border); color:var(--text);
+    padding: 0.55rem 0.8rem; border-radius: 6px; font-size:0.88rem; font-family: var(--sans);
+  }
+  #search:focus{ outline:none; border-color: var(--gold-dim); }
+  .market-filter{ display:flex; gap:0.4rem; flex-wrap:wrap; }
+  .mf-btn{
+    font-family: var(--mono); font-size:0.72rem; padding:0.4rem 0.65rem;
+    background: var(--panel); border:1px solid var(--border); color:var(--text-dim);
+    border-radius: 5px; cursor:pointer; user-select:none;
+  }
+  .mf-btn.active{ border-color: var(--gold-dim); color: var(--gold); background: #241f14; }
+
+  main{ max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .group{
+    margin-top: 1.6rem; border:1px solid var(--border); border-radius: 10px;
+    background: var(--panel); overflow:hidden;
+  }
+  .group-head{
+    padding: 0.75rem 1rem; border-bottom:1px solid var(--border);
+    display:flex; align-items:center; justify-content:space-between;
+    background: linear-gradient(180deg, #1f222a, #1b1e25);
+  }
+  .group-title{ font-weight:700; font-size:0.95rem; letter-spacing:0.01em; }
+  .group-count{ font-family: var(--mono); font-size:0.72rem; color: var(--text-faint); }
+
+  table{ width:100%; border-collapse: collapse; font-size: 0.85rem; }
+  thead th{
+    text-align:left; font-weight:500; font-size:0.68rem; letter-spacing:0.04em; text-transform:uppercase;
+    color: var(--text-faint); padding: 0.5rem 1rem; border-bottom:1px solid var(--border);
+  }
+  tbody td{ padding: 0.6rem 1rem; border-bottom:1px solid var(--border); vertical-align: middle; }
+  tbody tr:last-child td{ border-bottom:none; }
+  tbody tr:hover{ background: var(--panel-hover); }
+
+  .mkt{
+    display:inline-block; font-family: var(--mono); font-size:0.65rem; font-weight:700;
+    padding: 0.1rem 0.4rem; border-radius:4px; letter-spacing:0.03em;
+  }
+  .mkt-US{ color:#7ea8ff; background:#1a2440; }
+  .mkt-TW{ color:#ff8f8f; background:#3a1a1c; }
+  .mkt-JP{ color:#ffb0d9; background:#3a1a2c; }
+  .mkt-KR{ color:#8fd6ff; background:#12303a; }
+
+  .name{ font-weight:600; }
+  .ticker{ font-family: var(--mono); color: var(--text-dim); font-size:0.78rem; }
+  .price{ font-family: var(--mono); text-align:right; }
+  .change{ font-family: var(--mono); text-align:right; font-size:0.8rem; }
+  .change.up{ color: var(--up); }
+  .change.down{ color: var(--down); }
+  .change.flat{ color: var(--flat); }
+  .product{ color: var(--text-dim); font-size:0.8rem; max-width: 260px; }
+  .src a{ color: var(--gold); text-decoration:none; font-size:0.75rem; }
+  .src a:hover{ text-decoration:underline; }
+  .na{ color: var(--text-faint); }
+
+  footer{
+    max-width:1200px; margin: 2.5rem auto 0; padding: 1rem 1.5rem;
+    color: var(--text-faint); font-size:0.75rem; border-top:1px solid var(--border);
+  }
+  footer a{ color: var(--text-dim); }
+
+  @media (max-width: 640px){
+    .product{ display:none; }
+    thead th:nth-child(6), tbody td:nth-child(6){ display:none; }
+    .header-row{ flex-direction:column; align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-row">
+    <h1><span class="bar"></span>台美日韓產業關聯儀表板</h1>
+    <div class="meta" id="updated-at">載入中...</div>
+  </div>
+  <div class="legend">
+    <span><span class="dot" style="background:var(--up)"></span>上漲（台股慣例：紅漲綠跌）</span>
+    <span><span class="dot" style="background:var(--down)"></span>下跌</span>
+    <span>資料每週日更新，來源 Yahoo Finance</span>
+  </div>
+</header>
+
+<div class="toolbar">
+  <input id="search" type="text" placeholder="搜尋公司名稱、代號或產業組...">
+  <div class="market-filter" id="market-filter">
+    <div class="mf-btn active" data-mkt="ALL">全部</div>
+    <div class="mf-btn" data-mkt="US">美國</div>
+    <div class="mf-btn" data-mkt="TW">台灣</div>
+    <div class="mf-btn" data-mkt="JP">日本</div>
+    <div class="mf-btn" data-mkt="KR">韓國</div>
+  </div>
+</div>
+
+<main id="main">
+  <p style="color:var(--text-dim); padding:2rem 0;">資料載入中...</p>
+</main>
+
+<footer>
+  分組為人工挑選之跨市場同產業代表公司，非完整指數成分股清單。股價資料延遲，僅供研究參考，不構成投資建議。
+  資料來源：<a href="https://finance.yahoo.com" target="_blank" rel="noopener">Yahoo Finance</a>。
+  <span id="repo-link"></span>
+</footer>
+
+<script>
+let GROUPS = [];
+let LATEST = {};
+let activeMarket = "ALL";
+
+function fmtPrice(price, currency){
+  if(price === null || price === undefined) return '<span class="na">—</span>';
+  const p = price >= 1000 ? price.toFixed(0) : price.toFixed(2);
+  return `${p} <span style="color:var(--text-faint); font-size:0.7rem">${currency||''}</span>`;
+}
+
+function fmtChange(pct){
+  if(pct === null || pct === undefined) return '<span class="na">—</span>';
+  const cls = pct > 0 ? 'up' : (pct < 0 ? 'down' : 'flat');
+  const sign = pct > 0 ? '+' : '';
+  return `<span class="change ${cls}">${sign}${pct.toFixed(2)}%</span>`;
+}
+
+function render(){
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const main = document.getElementById('main');
+  main.innerHTML = '';
+
+  let anyVisible = false;
+
+  GROUPS.forEach(group => {
+    let companies = group.companies;
+    if(activeMarket !== 'ALL'){
+      companies = companies.filter(c => c.market === activeMarket);
+    }
+    if(q){
+      companies = companies.filter(c =>
+        c.name.toLowerCase().includes(q) ||
+        c.ticker.toLowerCase().includes(q) ||
+        group.name.toLowerCase().includes(q) ||
+        (c.product||'').toLowerCase().includes(q)
+      );
+    }
+    if(companies.length === 0) return;
+    anyVisible = true;
+
+    const rows = companies.map(c => {
+      const info = LATEST[c.ticker] || {};
+      return `
+        <tr>
+          <td><span class="mkt mkt-${c.market}">${c.market}</span></td>
+          <td class="name">${c.name}</td>
+          <td class="ticker">${c.ticker}</td>
+          <td class="price">${fmtPrice(info.price, info.currency)}</td>
+          <td class="change">${fmtChange(info.change_pct)}</td>
+          <td class="product">${c.product || ''}</td>
+          <td class="src"><a href="${c.source}" target="_blank" rel="noopener">來源↗</a></td>
+        </tr>`;
+    }).join('');
+
+    const el = document.createElement('div');
+    el.className = 'group';
+    el.innerHTML = `
+      <div class="group-head">
+        <div class="group-title">${group.name}</div>
+        <div class="group-count">${companies.length} 檔</div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>市場</th><th>公司</th><th>代號</th><th style="text-align:right">最新價</th>
+            <th style="text-align:right">漲跌</th><th>主要產品</th><th>來源</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>`;
+    main.appendChild(el);
+  });
+
+  if(!anyVisible){
+    main.innerHTML = '<p style="color:var(--text-dim); padding:2rem 0;">沒有符合條件的公司。</p>';
+  }
+}
+
+async function init(){
+  try{
+    const [groupsRes, latestRes] = await Promise.all([
+      fetch('data/groups.json'),
+      fetch('data/latest.json').catch(() => null)
+    ]);
+    const groupsData = await groupsRes.json();
+    GROUPS = groupsData.groups;
+
+    if(latestRes && latestRes.ok){
+      const latestData = await latestRes.json();
+      LATEST = latestData.tickers || {};
+      const dt = new Date(latestData.generated_at);
+      document.getElementById('updated-at').textContent =
+        '最後更新：' + dt.toLocaleString('zh-TW', {timeZone:'Asia/Taipei'}) + ' (台北時間)';
+    } else {
+      document.getElementById('updated-at').textContent = '尚無股價資料（等待首次自動更新）';
+    }
+  } catch(e){
+    document.getElementById('main').innerHTML =
+      `<p style="color:var(--up); padding:2rem 0;">資料載入失敗：${e.message}</p>`;
+    return;
+  }
+  render();
+}
+
+document.getElementById('search').addEventListener('input', render);
+document.getElementById('market-filter').addEventListener('click', (e) => {
+  const btn = e.target.closest('.mf-btn');
+  if(!btn) return;
+  document.querySelectorAll('.mf-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeMarket = btn.dataset.mkt;
+  render();
+});
+
+init();
+</script>
+
+</body>
+</html>
