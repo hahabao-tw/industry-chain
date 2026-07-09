@@ -21,7 +21,7 @@ Three moving parts, connected only through the two JSON files in `data/`:
 2. `scripts/fetch_prices.py` — **stdlib-only** Python (deliberate constraint: no pip installs in CI; do not add third-party dependencies). Fetches each unique ticker from Yahoo Finance's chart API with retry + rate-limit delay; a failing ticker is recorded with `price: null` rather than aborting the run. Writes `data/latest.json` (never hand-edit that file).
 3. `index.html` — the entire dashboard: vanilla HTML/CSS/JS in one file, no framework. Loads both JSON files at runtime and renders grouped tables with search and market filtering.
 
-`.github/workflows/update.yml` runs weekly (Sunday 00:00 UTC): fetches prices, commits `data/latest.json`, then deploys the repo root to GitHub Pages. Manual runs via workflow_dispatch.
+`.github/workflows/update.yml` runs daily (23:00 UTC = 07:00 Taipei): fetches prices, commits `data/latest.json`, then deploys the repo root to GitHub Pages. Manual runs via workflow_dispatch.
 
 ## Conventions
 

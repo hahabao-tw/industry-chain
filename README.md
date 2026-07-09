@@ -48,12 +48,11 @@ stdlib-only Python（無需 pip install 第三方套件）+ GitHub Actions + Git
 
 ## 更新頻率
 
-**每週日**（UTC 00:00 = 台北時間週日 08:00）自動執行。
+**每天**（UTC 23:00 = 台北時間隔天早上 07:00）自動執行。
 
-選擇週日的原因：台美日韓四個市場的週五收盤資料，最晚在台北時間週六凌晨
-即已全部公布完成，週末沒有新收盤價，因此週日或週一抓都會拿到同一批資料，
-不需要更高頻率。若之後想改成每交易日更新，把 `.github/workflows/update.yml`
-裡的 cron 從 `0 0 * * 0` 改成 `0 0 * * 1-5` 即可（服務台美日韓周一至周五皆有收盤）。
+選擇台北時間早上七點的原因：前一晚的美股收盤（台北時間凌晨四、五點）
+已經確定，台/日/韓則呈現各自前一交易日的收盤價，一次抓齊四個市場最新
+可得的資料。cron 設定在 `.github/workflows/update.yml`（`0 23 * * *`）。
 
 ## 部署步驟（GitHub Desktop 流程，比照你先前專案）
 
@@ -61,8 +60,8 @@ stdlib-only Python（無需 pip install 第三方套件）+ GitHub Actions + Git
 2. 用 GitHub Desktop 把這個資料夾整個加入該 repo 並 push 到 `main` 分支。
 3. 到 repo 的 **Settings → Pages**，「Build and deployment」的 Source 選擇
    **GitHub Actions**（不是「Deploy from a branch」）。
-4. 到 **Actions** 頁籤，手動觸發一次 `Weekly price update`
-   （右側 "Run workflow" 按鈕）完成首次抓價與部署，之後就會每週日自動跑。
+4. 到 **Actions** 頁籤，手動觸發一次 `Daily price update`
+   （右側 "Run workflow" 按鈕）完成首次抓價與部署，之後就會每天自動跑。
 5. 完成後網站會在 `https://<帳號>.github.io/<repo名稱>/` 上線。
 
 > 注意：本機開發環境若有網路白名單限制，可能連不到
