@@ -1,5 +1,5 @@
 {
-  "updated_note": "本檔為公司分組主檔（人工分類，含股票代號）。即時股價由 scripts/fetch_prices.py 每週抓取後寫入 data/latest.json，不存在此檔。",
+  "updated_note": "本檔為公司分組主檔（人工分類，含股票代號）。即時股價由 scripts/fetch_prices.py 每天抓取後寫入 data/latest.json，不存在此檔。",
   "groups": [
     {
       "id": "foundry",
