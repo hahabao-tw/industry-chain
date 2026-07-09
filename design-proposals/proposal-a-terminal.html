@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>方案 A — 終端機風格 | 台美日韓產業關聯</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground: #0A0E1A;
+    --surface-1: #11172A;
+    --surface-2: #1A2138;
+    --amber: #FFA02F;
+    --up: #F23645;      /* 台股慣例:紅漲 */
+    --down: #00B96B;    /* 台股慣例:綠跌 */
+    --muted: #5E6680;
+    --text: #E8ECF4;
+    --hairline: #2A3050;
+    --mono: 'IBM Plex Mono', 'Cascadia Code', 'Consolas', 'Microsoft JhengHei', monospace;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:var(--ground); color:var(--text); font-family:var(--mono); font-size:12px; }
+  body{ padding-bottom:48px; }
+
+  /* ── 頂部跑馬燈 ─────────────────────────── */
+  .tickerbar{
+    height:28px; border-bottom:1px solid var(--hairline); background:var(--surface-1);
+    overflow:hidden; position:relative; display:flex; align-items:center;
+  }
+  .tickerbar .label{
+    flex:0 0 auto; padding:0 12px; height:100%; display:flex; align-items:center;
+    background:var(--amber); color:#0A0E1A; font-weight:700; font-size:11px; letter-spacing:0.08em;
+    z-index:2;
+  }
+  .marquee{ flex:1; overflow:hidden; white-space:nowrap; }
+  .marquee-inner{ display:inline-block; padding-left:100%; animation:scroll 60s linear infinite; }
+  .marquee-inner span{ margin-right:28px; font-size:11px; }
+  .marquee-inner .t{ color:var(--muted); }
+  @keyframes scroll{ from{ transform:translateX(0); } to{ transform:translateX(-100%); } }
+
+  /* ── 標題列 ─────────────────────────────── */
+  header{
+    padding:10px 16px 8px; border-bottom:1px solid var(--hairline);
+    display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+  h1{ font-size:14px; font-weight:700; letter-spacing:0.12em; color:var(--amber); text-transform:uppercase; }
+  h1 .dim{ color:var(--muted); font-weight:400; }
+  .meta{ font-size:11px; color:var(--muted); }
+  .meta b{ color:var(--text); font-weight:500; }
+
+  /* ── 指令列:搜尋 + 市場切換 ───────────── */
+  .cmdbar{
+    display:flex; gap:0; border-bottom:1px solid var(--hairline); background:var(--surface-1);
+    flex-wrap:wrap;
+  }
+  .cmd-search{
+    flex:1 1 280px; display:flex; align-items:center; padding:0 12px; min-height:34px;
+    border-right:1px solid var(--hairline);
+  }
+  .cmd-search .prompt{ color:var(--amber); margin-right:8px; font-weight:700; }
+  #search{
+    flex:1; background:transparent; border:none; outline:none; color:var(--text);
+    font-family:var(--mono); font-size:12px; letter-spacing:0.02em;
+  }
+  #search::placeholder{ color:var(--muted); }
+  .mkts{ display:flex; }
+  .mkt-btn{
+    padding:0 14px; min-height:34px; display:flex; align-items:center; gap:6px;
+    border-right:1px solid var(--hairline); cursor:pointer; user-select:none;
+    color:var(--muted); font-size:11px; letter-spacing:0.05em;
+  }
+  .mkt-btn .key{
+    display:inline-block; padding:1px 5px; border:1px solid var(--hairline);
+    font-size:10px; color:var(--muted);
+  }
+  .mkt-btn.active{ background:var(--surface-2); color:var(--amber); }
+  .mkt-btn.active .key{ border-color:var(--amber); color:var(--amber); }
+  .mkt-btn:hover{ background:var(--surface-2); }
+
+  /* ── 多面板網格 ─────────────────────────── */
+  main{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(340px, 1fr));
+    gap:0; border-left:1px solid var(--hairline);
+  }
+  .panel{
+    border-right:1px solid var(--hairline); border-bottom:1px solid var(--hairline);
+    background:var(--ground); min-width:0;
+  }
+  .panel-head{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:5px 10px; background:var(--surface-1); border-bottom:1px solid var(--hairline);
+  }
+  .panel-title{ color:var(--amber); font-weight:700; font-size:11px; letter-spacing:0.1em; }
+  .panel-idx{ color:var(--muted); font-size:10px; }
+  table{ width:100%; border-collapse:collapse; }
+  td{
+    padding:3px 10px; font-size:11.5px; border-bottom:1px solid rgba(42,48,80,0.45);
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  tr:last-child td{ border-bottom:none; }
+  tr:hover td{ background:var(--surface-2); }
+  .c-mkt{ width:30px; color:var(--muted); font-size:10px; font-weight:600; }
+  .c-tkr{ width:86px; color:var(--muted); }
+  .c-name{ max-width:110px; }
+  .c-price{ text-align:right; font-variant-numeric:tabular-nums; }
+  .c-chg{ text-align:right; width:70px; font-variant-numeric:tabular-nums; font-weight:600; }
+  .up{ color:var(--up); }
+  .down{ color:var(--down); }
+  .flat{ color:var(--muted); }
+  .na{ color:var(--muted); opacity:0.5; }
+
+  /* 資料載入閃爍 */
+  @keyframes flash{ 0%{ background:rgba(255,160,47,0.18); } 100%{ background:transparent; } }
+  .panel.loaded .panel-head{ animation:flash 0.5s ease-out 1; }
+
+  footer{
+    padding:10px 16px; color:var(--muted); font-size:10.5px; border-top:1px solid var(--hairline);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+  footer a{ color:var(--amber); text-decoration:none; }
+  .backlink{
+    position:fixed; bottom:10px; right:10px; z-index:20;
+    background:var(--surface-2); border:1px solid var(--hairline); color:var(--muted);
+    padding:4px 10px; font-size:10px; text-decoration:none;
+  }
+  .backlink:hover{ color:var(--amber); border-color:var(--amber); }
+
+  @media (max-width:640px){
+    main{ grid-template-columns:1fr; }
+    .c-name{ max-width:80px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="tickerbar">
+  <div class="label">MARKETS</div>
+  <div class="marquee"><div class="marquee-inner" id="marquee"></div></div>
+</div>
+
+<header>
+  <h1>台美日韓產業關聯 <span class="dim">/ CROSS-MARKET MONITOR</span></h1>
+  <div class="meta" id="updated-at">LOADING…</div>
+</header>
+
+<div class="cmdbar">
+  <div class="cmd-search">
+    <span class="prompt">&gt;</span>
+    <input id="search" type="text" placeholder="搜尋公司 / 代號 / 產業…(按 / 聚焦)">
+  </div>
+  <div class="mkts" id="market-filter">
+    <div class="mkt-btn active" data-mkt="ALL"><span class="key">1</span>全部</div>
+    <div class="mkt-btn" data-mkt="US"><span class="key">2</span>美國</div>
+    <div class="mkt-btn" data-mkt="TW"><span class="key">3</span>台灣</div>
+    <div class="mkt-btn" data-mkt="JP"><span class="key">4</span>日本</div>
+    <div class="mkt-btn" data-mkt="KR"><span class="key">5</span>韓國</div>
+  </div>
+</div>
+
+<main id="main"></main>
+
+<footer>
+  <span>紅漲綠跌(台股慣例)· 資料每週日更新 · 來源 Yahoo Finance</span>
+  <span>非投資建議,僅供產業連動研究參考</span>
+</footer>
+
+<a class="backlink" href="index.html">← 方案總覽</a>
+
+<script>
+let GROUPS = [], LATEST = {}, activeMarket = "ALL";
+
+const fmtP = (p) => (p === null || p === undefined) ? '<span class="na">—</span>'
+  : (p >= 1000 ? p.toLocaleString('en-US', {maximumFractionDigits:0}) : p.toFixed(2));
+
+function fmtC(pct){
+  if(pct === null || pct === undefined) return '<span class="na">—</span>';
+  const cls = pct > 0 ? 'up' : (pct < 0 ? 'down' : 'flat');
+  return `<span class="${cls}">${pct > 0 ? '+' : ''}${pct.toFixed(2)}%</span>`;
+}
+
+function render(){
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const main = document.getElementById('main');
+  main.innerHTML = '';
+  GROUPS.forEach((group, gi) => {
+    let cs = group.companies;
+    if(activeMarket !== 'ALL') cs = cs.filter(c => c.market === activeMarket);
+    if(q) cs = cs.filter(c =>
+      c.name.toLowerCase().includes(q) || c.ticker.toLowerCase().includes(q) ||
+      group.name.toLowerCase().includes(q) || (c.product||'').toLowerCase().includes(q));
+    if(!cs.length) return;
+    const rows = cs.map(c => {
+      const i = LATEST[c.ticker] || {};
+      return `<tr>
+        <td class="c-mkt">${c.market}</td>
+        <td class="c-tkr">${c.ticker}</td>
+        <td class="c-name" title="${c.product||''}">${c.name}</td>
+        <td class="c-price">${fmtP(i.price)}</td>
+        <td class="c-chg">${fmtC(i.change_pct)}</td>
+      </tr>`;
+    }).join('');
+    const el = document.createElement('div');
+    el.className = 'panel loaded';
+    el.innerHTML = `
+      <div class="panel-head">
+        <span class="panel-title">${group.name}</span>
+        <span class="panel-idx">${String(gi+1).padStart(2,'0')} · ${cs.length}檔</span>
+      </div>
+      <table><tbody>${rows}</tbody></table>`;
+    main.appendChild(el);
+  });
+  if(!main.children.length)
+    main.innerHTML = '<div style="padding:24px; color:var(--muted); grid-column:1/-1;">NO MATCH — 沒有符合條件的公司</div>';
+}
+
+function buildMarquee(){
+  const items = [];
+  GROUPS.forEach(g => g.companies.forEach(c => {
+    const i = LATEST[c.ticker];
+    if(i && i.price != null && i.change_pct != null){
+      const cls = i.change_pct > 0 ? 'up' : (i.change_pct < 0 ? 'down' : 'flat');
+      items.push(`<span><span class="t">${c.ticker}</span> ${fmtP(i.price)} <span class="${cls}">${i.change_pct > 0 ? '▲' : (i.change_pct < 0 ? '▼' : '')}${Math.abs(i.change_pct).toFixed(2)}%</span></span>`);
+    }
+  }));
+  document.getElementById('marquee').innerHTML =
+    items.length ? items.join('') + items.join('') : '<span class="t">等待首次股價更新…</span>';
+}
+
+async function init(){
+  try{
+    const [g, l] = await Promise.all([
+      fetch('../data/groups.json').then(r => r.json()),
+      fetch('../data/latest.json').then(r => r.ok ? r.json() : null).catch(() => null)
+    ]);
+    GROUPS = g.groups;
+    if(l && l.generated_at){
+      LATEST = l.tickers || {};
+      document.getElementById('updated-at').innerHTML =
+        'LAST UPDATE <b>' + new Date(l.generated_at).toLocaleString('zh-TW',{timeZone:'Asia/Taipei'}) + '</b> TPE';
+    } else {
+      document.getElementById('updated-at').textContent = '尚無股價資料';
+    }
+  } catch(e){
+    document.getElementById('main').innerHTML =
+      `<div style="padding:24px; color:var(--up); grid-column:1/-1;">資料載入失敗:${e.message}</div>`;
+    return;
+  }
+  buildMarquee();
+  render();
+}
+
+document.getElementById('search').addEventListener('input', render);
+document.getElementById('market-filter').addEventListener('click', e => {
+  const btn = e.target.closest('.mkt-btn');
+  if(!btn) return;
+  document.querySelectorAll('.mkt-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeMarket = btn.dataset.mkt;
+  render();
+});
+document.addEventListener('keydown', e => {
+  if(e.target.tagName === 'INPUT'){ if(e.key === 'Escape') e.target.blur(); return; }
+  if(e.key === '/'){ e.preventDefault(); document.getElementById('search').focus(); return; }
+  const map = {'1':'ALL','2':'US','3':'TW','4':'JP','5':'KR'};
+  if(map[e.key]){
+    document.querySelector(`.mkt-btn[data-mkt="${map[e.key]}"]`).click();
+  }
+});
+
+init();
+</script>
+
+</body>
+</html>

@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="以台灣投資人角度,跨美/台/日/韓四市場並排比較同產業代表公司的行情週報,觀察產業連動效應。">
-<title>產業關聯 — 台美日韓跨市場行情週報</title>
+<title>方案 B — 財經雜誌風格 | 台美日韓產業關聯</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -12,13 +11,9 @@
   :root{
     --paper: #F2EFE7;
     --ink: #1A1A1A;
-    --red: #C7322E;      /* 編輯紅 */
-    --olive: #5E6347;    /* 橄欖綠 */
-    --up: var(--red);    /* 台股慣例:紅漲 */
-    --down: var(--olive);/* 台股慣例:綠跌 */
+    --red: #C7322E;      /* 編輯紅,兼作台股慣例的「漲」 */
+    --olive: #5E6347;    /* 橄欖綠,兼作「跌」 */
     --rule: #C8C2B0;
-    --dim: #6a675e;
-    --faint: #8b887c;
     --serif: 'Noto Serif TC', 'PMingLiU', serif;
     --sans: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
   }
@@ -27,16 +22,8 @@
     background:var(--paper); color:var(--ink); font-family:var(--serif);
     font-size:16px; line-height:1.6; padding-bottom:96px;
   }
-  ::selection{ background:rgba(199,50,46,0.16); }
-  p{ text-wrap:pretty; }
 
   .page{ max-width:1080px; margin:0 auto; padding:0 32px; }
-
-  /* ── 進場淡入(雜誌翻頁感) ─────────────── */
-  @media (prefers-reduced-motion: no-preference){
-    .fade-in{ animation:fadein 0.6s ease-out both; }
-    @keyframes fadein{ from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:none; } }
-  }
 
   /* ── 刊頭 ─────────────────────────────── */
   .masthead{ text-align:center; padding:48px 0 24px; border-bottom:3px double var(--ink); }
@@ -52,7 +39,7 @@
   }
   .issue-line{
     display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;
-    font-family:var(--sans); font-size:11px; letter-spacing:0.12em; color:var(--dim);
+    font-family:var(--sans); font-size:11px; letter-spacing:0.12em; color:#6a675e;
     padding:10px 0; border-bottom:1px solid var(--rule);
   }
   .issue-line .no{ color:var(--red); font-weight:700; }
@@ -60,7 +47,7 @@
   /* ── 導言 ─────────────────────────────── */
   .intro{
     columns:2; column-gap:32px; column-rule:1px solid var(--rule);
-    padding:32px 0; font-size:16.5px;
+    padding:32px 0; border-bottom:1px solid var(--rule); font-size:16.5px;
   }
   .intro p + p{ margin-top:0.8em; }
   .intro p:first-child::first-letter{
@@ -73,21 +60,7 @@
     }
   }
 
-  /* ── 本週速覽 ─────────────────────────── */
-  .in-numbers{
-    display:none; /* 有資料時由 JS 打開 */
-    border-top:1px solid var(--ink); border-bottom:1px solid var(--rule);
-    padding:12px 0; font-family:var(--sans); font-size:12px; letter-spacing:0.1em;
-    color:var(--dim); flex-wrap:wrap; gap:6px 28px; align-items:baseline;
-  }
-  .in-numbers .kicker{
-    color:var(--red); font-weight:700; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase;
-  }
-  .in-numbers b{ font-weight:700; color:var(--ink); font-variant-numeric:tabular-nums; }
-  .in-numbers .up-n{ color:var(--up); }
-  .in-numbers .down-n{ color:var(--down); }
-
-  /* ── 檢索列 ───────────────────────────── */
+  /* ── 檢索列(雜誌式低調控制) ─────────── */
   .controls{
     display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
     padding:16px 0; border-bottom:1px solid var(--rule);
@@ -96,20 +69,13 @@
   #search{
     flex:1 1 300px; background:transparent; border:none; border-bottom:1px solid var(--ink);
     font-family:var(--serif); font-size:16px; font-style:italic; color:var(--ink);
-    padding:4px 2px; outline:none; border-radius:0;
-    transition:border-color 0.2s;
+    padding:4px 2px; outline:none;
   }
-  #search::placeholder{ color:var(--faint); }
-  #search:focus{ border-bottom:2px solid var(--red); margin-bottom:-1px; }
+  #search::placeholder{ color:#8b887c; }
   .mkts{ display:flex; gap:20px; font-size:11.5px; letter-spacing:0.14em; }
-  .mkt-btn{
-    cursor:pointer; color:var(--dim); text-transform:uppercase; padding-bottom:2px;
-    user-select:none; background:none; border:none; font:inherit; letter-spacing:inherit;
-    border-bottom:2px solid transparent;
-  }
-  .mkt-btn.active{ color:var(--red); border-bottom-color:var(--red); font-weight:700; }
+  .mkt-btn{ cursor:pointer; color:#6a675e; text-transform:uppercase; padding-bottom:2px; user-select:none; }
+  .mkt-btn.active{ color:var(--red); border-bottom:2px solid var(--red); font-weight:700; }
   .mkt-btn:hover{ color:var(--ink); }
-  .mkt-btn:focus-visible{ outline:2px solid var(--red); outline-offset:3px; }
 
   /* ── 產業特輯 ─────────────────────────── */
   main{ padding-top:8px; }
@@ -126,66 +92,57 @@
     font-size:30px; font-weight:900; line-height:1.25; margin-top:8px; letter-spacing:0.02em;
   }
   .feature .count{
-    font-family:var(--sans); font-size:11px; color:var(--dim); margin-top:10px; letter-spacing:0.1em;
+    font-family:var(--sans); font-size:11px; color:#6a675e; margin-top:10px; letter-spacing:0.1em;
   }
   .feature .markets-in{
-    margin-top:18px; font-family:var(--sans); font-size:10.5px; letter-spacing:0.12em; color:var(--faint);
+    margin-top:18px; font-family:var(--sans); font-size:10.5px; letter-spacing:0.12em; color:#8b887c;
     line-height:2;
   }
 
   table{ width:100%; border-collapse:collapse; }
   thead th{
     font-family:var(--sans); font-size:10px; letter-spacing:0.16em; text-transform:uppercase;
-    color:var(--dim); font-weight:700; text-align:left; padding:0 10px 8px;
+    color:#6a675e; font-weight:700; text-align:left; padding:0 10px 8px;
     border-bottom:1px solid var(--ink);
   }
   thead th.num{ text-align:right; }
   tbody td{ padding:9px 10px; border-bottom:1px solid var(--rule); vertical-align:baseline; }
   tbody tr:last-child td{ border-bottom:none; }
-  tbody tr{ transition:background 0.15s; }
-  tbody tr:hover{ background:#ECE8DB; }
   .c-mkt{
     font-family:var(--sans); font-size:10px; font-weight:700; letter-spacing:0.1em;
-    color:var(--dim); width:36px;
+    color:#6a675e; width:36px;
   }
   .c-name{ font-weight:700; font-size:16.5px; white-space:nowrap; }
-  .c-name a{ color:inherit; text-decoration:none; }
-  .c-name a:hover{ border-bottom:1px solid var(--red); }
   .c-name .tkr{
-    font-family:var(--sans); font-weight:400; font-size:11px; color:var(--faint);
-    margin-left:8px; letter-spacing:0.05em;
+    font-family:var(--sans); font-weight:400; font-size:11px; color:#8b887c; margin-left:8px; letter-spacing:0.05em;
   }
   .c-product{ font-size:13.5px; color:#55534a; font-style:italic; max-width:300px; }
   .c-price{ text-align:right; font-variant-numeric:tabular-nums; font-size:16.5px; white-space:nowrap; }
-  .c-price .cur{ font-family:var(--sans); font-size:10px; color:var(--faint); margin-left:4px; }
+  .c-price .cur{ font-family:var(--sans); font-size:10px; color:#8b887c; margin-left:4px; }
   .c-chg{ text-align:right; font-variant-numeric:tabular-nums; font-weight:700; white-space:nowrap; width:86px; }
-  .up{ color:var(--up); }
-  .down{ color:var(--down); }
-  .flat{ color:var(--faint); }
+  .up{ color:var(--red); }
+  .down{ color:var(--olive); }
+  .flat{ color:#8b887c; }
   .na{ color:#b5b1a2; }
-
-  .empty{ padding:48px 0; font-style:italic; color:var(--dim); }
 
   footer{
     margin-top:48px; padding-top:16px; border-top:3px double var(--ink);
-    font-family:var(--sans); font-size:11.5px; color:var(--dim); line-height:1.8;
+    font-family:var(--sans); font-size:11.5px; color:#6a675e; line-height:1.8;
   }
   footer a{ color:var(--red); }
 
+  .backlink{
+    position:fixed; bottom:12px; right:12px; z-index:20;
+    font-family:var(--sans); font-size:11px; letter-spacing:0.08em;
+    background:var(--ink); color:var(--paper); padding:6px 12px; text-decoration:none;
+  }
+
   @media (max-width:760px){
-    .page{ padding:0 20px; }
     .intro{ columns:1; }
     .feature{ grid-template-columns:1fr; gap:12px; }
     .c-product{ display:none; }
     thead th:nth-child(3){ display:none; }
     tbody td:nth-child(3){ display:none; }
-    .c-name{ white-space:normal; }
-  }
-
-  @media print{
-    .controls{ display:none; }
-    body{ padding-bottom:0; }
-    tbody tr:hover{ background:none; }
   }
 </style>
 </head>
@@ -193,18 +150,18 @@
 
 <div class="page">
 
-  <header class="masthead fade-in">
+  <div class="masthead">
     <div class="kicker">Cross-Market Industry Observer</div>
     <h1>產業關聯</h1>
     <div class="dek">台、美、日、韓 —— 四個市場,一條產業鏈的漲跌呼吸</div>
-  </header>
+  </div>
   <div class="issue-line">
     <span class="no">週報 · WEEKLY EDITION</span>
     <span id="updated-at">資料載入中…</span>
     <span>紅漲・綠跌(台股慣例)</span>
   </div>
 
-  <div class="intro fade-in">
+  <div class="intro">
     <p>記憶體在費城跌了一夜,隔天早上的台北與首爾往往同步走低。這份行情週報以台灣投資人的視角,
     從道瓊、那斯達克、費城半導體、KOSPI、日經225與台灣加權/上櫃指數中,挑出同一條產業鏈上的
     代表公司,跨市場並排比較。</p>
@@ -213,21 +170,14 @@
     僅供產業連動研究參考,不構成投資建議。</p>
   </div>
 
-  <div class="in-numbers" id="in-numbers">
-    <span class="kicker">本週速覽</span>
-    <span id="n-updown"></span>
-    <span id="n-best"></span>
-    <span id="n-worst"></span>
-  </div>
-
   <div class="controls">
-    <input id="search" type="text" placeholder="搜尋公司、代號或產業……" aria-label="搜尋公司、代號或產業">
-    <div class="mkts" id="market-filter" role="group" aria-label="市場篩選">
-      <button class="mkt-btn active" data-mkt="ALL">全部</button>
-      <button class="mkt-btn" data-mkt="US">美國</button>
-      <button class="mkt-btn" data-mkt="TW">台灣</button>
-      <button class="mkt-btn" data-mkt="JP">日本</button>
-      <button class="mkt-btn" data-mkt="KR">韓國</button>
+    <input id="search" type="text" placeholder="搜尋公司、代號或產業……">
+    <div class="mkts" id="market-filter">
+      <span class="mkt-btn active" data-mkt="ALL">全部</span>
+      <span class="mkt-btn" data-mkt="US">美國</span>
+      <span class="mkt-btn" data-mkt="TW">台灣</span>
+      <span class="mkt-btn" data-mkt="JP">日本</span>
+      <span class="mkt-btn" data-mkt="KR">韓國</span>
     </div>
   </div>
 
@@ -239,6 +189,8 @@
   </footer>
 
 </div>
+
+<a class="backlink" href="index.html">← 方案總覽</a>
 
 <script>
 let GROUPS = [], LATEST = {}, activeMarket = "ALL";
@@ -252,29 +204,6 @@ function fmtC(pct){
   if(pct === null || pct === undefined) return '<span class="na">—</span>';
   const cls = pct > 0 ? 'up' : (pct < 0 ? 'down' : 'flat');
   return `<span class="${cls}">${pct > 0 ? '+' : ''}${pct.toFixed(2)}%</span>`;
-}
-
-function buildInNumbers(){
-  const seen = new Set();
-  let up = 0, down = 0, best = null, worst = null;
-  GROUPS.forEach(g => g.companies.forEach(c => {
-    if(seen.has(c.ticker)) return;
-    seen.add(c.ticker);
-    const i = LATEST[c.ticker];
-    if(!i || i.change_pct == null) return;
-    if(i.change_pct > 0) up++;
-    if(i.change_pct < 0) down++;
-    if(!best || i.change_pct > best.pct) best = { name:c.name, pct:i.change_pct };
-    if(!worst || i.change_pct < worst.pct) worst = { name:c.name, pct:i.change_pct };
-  }));
-  if(!up && !down) return;
-  document.getElementById('n-updown').innerHTML =
-    `上漲 <b class="up-n">${up}</b> 檔 ・ 下跌 <b class="down-n">${down}</b> 檔`;
-  if(best) document.getElementById('n-best').innerHTML =
-    `最強 <b>${best.name}</b> <b class="up-n">+${best.pct.toFixed(2)}%</b>`;
-  if(worst) document.getElementById('n-worst').innerHTML =
-    `最弱 <b>${worst.name}</b> <b class="down-n">${worst.pct.toFixed(2)}%</b>`;
-  document.getElementById('in-numbers').style.display = 'flex';
 }
 
 function render(){
@@ -297,7 +226,7 @@ function render(){
       const i = LATEST[c.ticker] || {};
       return `<tr>
         <td class="c-mkt">${c.market}</td>
-        <td class="c-name"><a href="${c.source}" target="_blank" rel="noopener">${c.name}</a><span class="tkr">${c.ticker}</span></td>
+        <td class="c-name">${c.name}<span class="tkr">${c.ticker}</span></td>
         <td class="c-product">${c.product || ''}</td>
         <td class="c-price">${fmtP(i.price, i.currency)}</td>
         <td class="c-chg">${fmtC(i.change_pct)}</td>
@@ -306,7 +235,6 @@ function render(){
 
     const el = document.createElement('section');
     el.className = 'feature';
-    el.id = group.id;
     el.innerHTML = `
       <div class="feature-side">
         <div class="kicker">Feature ${String(gi+1).padStart(2,'0')}</div>
@@ -318,7 +246,7 @@ function render(){
         <table>
           <thead><tr>
             <th>市場</th><th>公司</th><th>主要產品</th>
-            <th class="num">最新價</th><th class="num">漲跌</th>
+            <th class="num">最新價</th><th class="num">週漲跌</th>
           </tr></thead>
           <tbody>${rows}</tbody>
         </table>
@@ -326,14 +254,15 @@ function render(){
     main.appendChild(el);
   });
 
-  if(!any) main.innerHTML = '<p class="empty">沒有符合條件的公司。</p>';
+  if(!any) main.innerHTML =
+    '<p style="padding:48px 0; font-style:italic; color:#6a675e;">沒有符合條件的公司。</p>';
 }
 
 async function init(){
   try{
     const [g, l] = await Promise.all([
-      fetch('data/groups.json').then(r => r.json()),
-      fetch('data/latest.json').then(r => r.ok ? r.json() : null).catch(() => null)
+      fetch('../data/groups.json').then(r => r.json()),
+      fetch('../data/latest.json').then(r => r.ok ? r.json() : null).catch(() => null)
     ]);
     GROUPS = g.groups;
     if(l && l.generated_at){
@@ -345,10 +274,9 @@ async function init(){
     }
   } catch(e){
     document.getElementById('main').innerHTML =
-      `<p class="empty" style="color:var(--red);">資料載入失敗:${e.message}</p>`;
+      `<p style="padding:48px 0; color:var(--red);">資料載入失敗:${e.message}</p>`;
     return;
   }
-  buildInNumbers();
   render();
 }
 
@@ -360,10 +288,6 @@ document.getElementById('market-filter').addEventListener('click', e => {
   btn.classList.add('active');
   activeMarket = btn.dataset.mkt;
   render();
-});
-document.addEventListener('keydown', e => {
-  if(e.target.tagName === 'INPUT'){ if(e.key === 'Escape') e.target.blur(); return; }
-  if(e.key === '/'){ e.preventDefault(); document.getElementById('search').focus(); }
 });
 
 init();

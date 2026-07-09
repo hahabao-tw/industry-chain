@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>方案 C — 現代工具風格 | 台美日韓產業關聯</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground: #08090A;
+    --surface-1: #16171C;
+    --surface-2: #1E1F25;
+    --surface-3: #26272E;
+    --hairline: rgba(255,255,255,0.06);
+    --text: #F7F8F8;
+    --text-2: #9CA3AF;
+    --text-3: #6B7280;
+    --accent: #5E6AD2;
+    --up: #E5484D;      /* 台股慣例:紅漲 */
+    --down: #30A46C;    /* 台股慣例:綠跌 */
+    --sans: 'Noto Sans TC', 'Inter Tight', -apple-system, 'Microsoft JhengHei', sans-serif;
+    --display: 'Inter Tight', 'Noto Sans TC', sans-serif;
+    --mono: 'JetBrains Mono', 'Cascadia Code', monospace;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    background:var(--ground); color:var(--text); font-family:var(--sans);
+    font-size:14px; line-height:1.55; padding-bottom:64px;
+  }
+  ::selection{ background:rgba(94,106,210,0.35); }
+
+  /* ── 頂欄 ─────────────────────────────── */
+  .topbar{
+    position:sticky; top:0; z-index:10;
+    background:rgba(8,9,10,0.82); backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--hairline);
+  }
+  .topbar::before{
+    content:''; position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(600px 80px at 30% 0%, rgba(94,106,210,0.07), transparent 70%);
+  }
+  .topbar-inner{
+    max-width:1200px; margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+  }
+  .logo{
+    font-family:var(--display); font-weight:700; font-size:15px; letter-spacing:-0.02em;
+    display:flex; align-items:center; gap:8px;
+  }
+  .logo .mark{
+    width:8px; height:8px; border-radius:2px; background:var(--accent); display:inline-block;
+  }
+  .chip{
+    font-family:var(--mono); font-size:11px; color:var(--text-3);
+    background:var(--surface-1); border:1px solid var(--hairline);
+    padding:2px 8px; border-radius:6px;
+  }
+  .topbar .meta{ margin-left:auto; font-size:12px; color:var(--text-3); }
+
+  /* ── 統計列 ────────────────────────────── */
+  .stats{
+    max-width:1200px; margin:24px auto 0; padding:0 24px;
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:12px;
+  }
+  .stat{
+    background:var(--surface-1); border:1px solid var(--hairline); border-radius:12px;
+    padding:14px 16px;
+  }
+  .stat .k{ font-size:11.5px; color:var(--text-3); margin-bottom:4px; letter-spacing:0.02em; }
+  .stat .v{
+    font-family:var(--display); font-size:22px; font-weight:600; letter-spacing:-0.02em;
+    font-variant-numeric:tabular-nums;
+  }
+  .stat .v .sub{ font-size:12px; font-weight:500; color:var(--text-3); margin-left:6px; font-family:var(--sans); }
+
+  /* ── 工具列 ────────────────────────────── */
+  .toolbar{
+    max-width:1200px; margin:20px auto 0; padding:0 24px;
+    display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+  }
+  .searchwrap{
+    flex:1 1 280px; position:relative; display:flex; align-items:center;
+  }
+  #search{
+    width:100%; background:var(--surface-1); border:1px solid var(--hairline); border-radius:8px;
+    color:var(--text); font-family:var(--sans); font-size:13.5px;
+    padding:8px 40px 8px 12px; outline:none;
+    transition:border-color 150ms ease-out, box-shadow 150ms ease-out;
+  }
+  #search:focus{ border-color:var(--accent); box-shadow:0 0 0 3px rgba(94,106,210,0.18); }
+  #search::placeholder{ color:var(--text-3); }
+  .kbd{
+    position:absolute; right:8px; font-family:var(--mono); font-size:10.5px;
+    color:var(--text-3); background:var(--surface-2); border:1px solid var(--hairline);
+    border-radius:4px; padding:1px 6px; pointer-events:none;
+  }
+  .seg{
+    display:flex; background:var(--surface-1); border:1px solid var(--hairline);
+    border-radius:8px; padding:2px; gap:2px;
+  }
+  .seg-btn{
+    font-size:12.5px; color:var(--text-2); padding:5px 12px; border-radius:6px;
+    cursor:pointer; user-select:none; transition:all 150ms ease-out; white-space:nowrap;
+  }
+  .seg-btn:hover{ color:var(--text); }
+  .seg-btn.active{ background:var(--surface-3); color:var(--text); }
+
+  /* ── 產業卡片 ─────────────────────────── */
+  main{
+    max-width:1200px; margin:20px auto 0; padding:0 24px;
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(480px, 1fr)); gap:16px;
+    align-items:start;
+  }
+  .card{
+    background:var(--surface-1); border:1px solid var(--hairline); border-radius:12px;
+    overflow:hidden;
+    transition:border-color 150ms ease-out, transform 350ms var(--ease), box-shadow 350ms var(--ease);
+  }
+  .card:hover{
+    border-color:rgba(255,255,255,0.12);
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(0,0,0,0.35);
+  }
+  .card-head{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 16px; border-bottom:1px solid var(--hairline);
+  }
+  .card-title{
+    font-family:var(--display); font-weight:600; font-size:14.5px; letter-spacing:-0.01em;
+    display:flex; align-items:center; gap:8px;
+  }
+  .card-title .n{
+    font-family:var(--mono); font-size:10.5px; color:var(--text-3); font-weight:400;
+  }
+  .card-count{ font-size:11.5px; color:var(--text-3); }
+
+  table{ width:100%; border-collapse:collapse; }
+  tbody td{
+    padding:8px 16px; border-bottom:1px solid var(--hairline);
+    vertical-align:middle; white-space:nowrap;
+  }
+  tbody tr:last-child td{ border-bottom:none; }
+  tbody tr{ transition:background 150ms ease-out; }
+  tbody tr:hover{ background:var(--surface-2); }
+  .c-mkt{ width:36px; }
+  .mkt{
+    font-family:var(--mono); font-size:10px; font-weight:500; color:var(--text-2);
+    background:var(--surface-2); border:1px solid var(--hairline);
+    padding:1px 6px; border-radius:4px;
+  }
+  .c-name{ font-weight:500; font-size:13.5px; max-width:150px; overflow:hidden; text-overflow:ellipsis; }
+  .c-tkr{ font-family:var(--mono); font-size:11.5px; color:var(--text-3); }
+  .c-price{ text-align:right; font-family:var(--mono); font-size:12.5px; font-variant-numeric:tabular-nums; }
+  .c-price .cur{ font-size:10px; color:var(--text-3); margin-left:3px; }
+  .c-chg{ text-align:right; width:80px; }
+  .delta{
+    font-family:var(--mono); font-size:11.5px; font-weight:500;
+    padding:2px 7px; border-radius:5px; font-variant-numeric:tabular-nums;
+  }
+  .delta.up{ color:var(--up); background:rgba(229,72,77,0.12); }
+  .delta.down{ color:var(--down); background:rgba(48,164,108,0.12); }
+  .delta.flat{ color:var(--text-3); background:var(--surface-2); }
+  .na{ color:var(--text-3); opacity:0.6; }
+
+  footer{
+    max-width:1200px; margin:40px auto 0; padding:16px 24px 0;
+    border-top:1px solid var(--hairline); font-size:12px; color:var(--text-3);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+  footer a{ color:var(--text-2); }
+
+  .backlink{
+    position:fixed; bottom:12px; right:12px; z-index:20;
+    font-size:11.5px; color:var(--text-2); text-decoration:none;
+    background:var(--surface-2); border:1px solid var(--hairline);
+    padding:5px 12px; border-radius:8px;
+    transition:all 150ms ease-out;
+  }
+  .backlink:hover{ color:var(--text); border-color:var(--accent); }
+
+  @media (max-width:560px){
+    main{ grid-template-columns:1fr; }
+    .c-tkr{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="logo"><span class="mark"></span>產業關聯</div>
+    <span class="chip">TW · US · JP · KR</span>
+    <span class="chip" id="group-chip">— 產業組</span>
+    <div class="meta" id="updated-at">載入中…</div>
+  </div>
+</div>
+
+<div class="stats" id="stats"></div>
+
+<div class="toolbar">
+  <div class="searchwrap">
+    <input id="search" type="text" placeholder="搜尋公司、代號或產業…">
+    <span class="kbd">/</span>
+  </div>
+  <div class="seg" id="market-filter">
+    <span class="seg-btn active" data-mkt="ALL">全部</span>
+    <span class="seg-btn" data-mkt="US">美國</span>
+    <span class="seg-btn" data-mkt="TW">台灣</span>
+    <span class="seg-btn" data-mkt="JP">日本</span>
+    <span class="seg-btn" data-mkt="KR">韓國</span>
+  </div>
+</div>
+
+<main id="main"></main>
+
+<footer>
+  <span>紅漲綠跌(台股慣例)· 每週日更新 · 資料來源 <a href="https://finance.yahoo.com" target="_blank" rel="noopener">Yahoo Finance</a></span>
+  <span>僅供產業連動研究參考,不構成投資建議</span>
+</footer>
+
+<a class="backlink" href="index.html">← 方案總覽</a>
+
+<script>
+let GROUPS = [], LATEST = {}, activeMarket = "ALL";
+
+const fmtP = (p, cur) => (p === null || p === undefined) ? '<span class="na">—</span>'
+  : (p >= 1000 ? p.toLocaleString('en-US',{maximumFractionDigits:0}) : p.toFixed(2))
+    + `<span class="cur">${cur||''}</span>`;
+
+function fmtC(pct){
+  if(pct === null || pct === undefined) return '<span class="na">—</span>';
+  const cls = pct > 0 ? 'up' : (pct < 0 ? 'down' : 'flat');
+  return `<span class="delta ${cls}">${pct > 0 ? '+' : ''}${pct.toFixed(2)}%</span>`;
+}
+
+function buildStats(){
+  const seen = new Set();
+  let up = 0, down = 0, best = null, worst = null;
+  GROUPS.forEach(g => g.companies.forEach(c => {
+    if(seen.has(c.ticker)) return;
+    seen.add(c.ticker);
+    const i = LATEST[c.ticker];
+    if(!i || i.change_pct == null) return;
+    if(i.change_pct > 0) up++;
+    if(i.change_pct < 0) down++;
+    if(!best || i.change_pct > best.pct) best = { name:c.name, pct:i.change_pct };
+    if(!worst || i.change_pct < worst.pct) worst = { name:c.name, pct:i.change_pct };
+  }));
+  const el = document.getElementById('stats');
+  if(!up && !down){ el.style.display = 'none'; return; }
+  el.innerHTML = `
+    <div class="stat"><div class="k">上漲家數</div>
+      <div class="v" style="color:var(--up)">${up}<span class="sub">/ ${seen.size} 檔</span></div></div>
+    <div class="stat"><div class="k">下跌家數</div>
+      <div class="v" style="color:var(--down)">${down}<span class="sub">/ ${seen.size} 檔</span></div></div>
+    <div class="stat"><div class="k">最強</div>
+      <div class="v">${best ? best.name : '—'}<span class="sub" style="color:var(--up)">${best ? '+' + best.pct.toFixed(2) + '%' : ''}</span></div></div>
+    <div class="stat"><div class="k">最弱</div>
+      <div class="v">${worst ? worst.name : '—'}<span class="sub" style="color:var(--down)">${worst ? worst.pct.toFixed(2) + '%' : ''}</span></div></div>`;
+}
+
+function render(){
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const main = document.getElementById('main');
+  main.innerHTML = '';
+
+  GROUPS.forEach((group, gi) => {
+    let cs = group.companies;
+    if(activeMarket !== 'ALL') cs = cs.filter(c => c.market === activeMarket);
+    if(q) cs = cs.filter(c =>
+      c.name.toLowerCase().includes(q) || c.ticker.toLowerCase().includes(q) ||
+      group.name.toLowerCase().includes(q) || (c.product||'').toLowerCase().includes(q));
+    if(!cs.length) return;
+
+    const rows = cs.map(c => {
+      const i = LATEST[c.ticker] || {};
+      return `<tr title="${c.product||''}">
+        <td class="c-mkt"><span class="mkt">${c.market}</span></td>
+        <td class="c-name">${c.name}</td>
+        <td class="c-tkr">${c.ticker}</td>
+        <td class="c-price">${fmtP(i.price, i.currency)}</td>
+        <td class="c-chg">${fmtC(i.change_pct)}</td>
+      </tr>`;
+    }).join('');
+
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.innerHTML = `
+      <div class="card-head">
+        <div class="card-title"><span class="n">${String(gi+1).padStart(2,'0')}</span>${group.name}</div>
+        <div class="card-count">${cs.length} 檔</div>
+      </div>
+      <table><tbody>${rows}</tbody></table>`;
+    main.appendChild(el);
+  });
+
+  if(!main.children.length)
+    main.innerHTML = '<p style="color:var(--text-3); padding:32px 0; grid-column:1/-1;">沒有符合條件的公司。</p>';
+}
+
+async function init(){
+  try{
+    const [g, l] = await Promise.all([
+      fetch('../data/groups.json').then(r => r.json()),
+      fetch('../data/latest.json').then(r => r.ok ? r.json() : null).catch(() => null)
+    ]);
+    GROUPS = g.groups;
+    document.getElementById('group-chip').textContent = GROUPS.length + ' 產業組';
+    if(l && l.generated_at){
+      LATEST = l.tickers || {};
+      document.getElementById('updated-at').textContent =
+        '更新於 ' + new Date(l.generated_at).toLocaleString('zh-TW',{timeZone:'Asia/Taipei'});
+    } else {
+      document.getElementById('updated-at').textContent = '尚無股價資料';
+    }
+  } catch(e){
+    document.getElementById('main').innerHTML =
+      `<p style="color:var(--up); padding:32px 0; grid-column:1/-1;">資料載入失敗:${e.message}</p>`;
+    return;
+  }
+  buildStats();
+  render();
+}
+
+document.getElementById('search').addEventListener('input', render);
+document.getElementById('market-filter').addEventListener('click', e => {
+  const btn = e.target.closest('.seg-btn');
+  if(!btn) return;
+  document.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeMarket = btn.dataset.mkt;
+  render();
+});
+document.addEventListener('keydown', e => {
+  if(e.target.tagName === 'INPUT'){ if(e.key === 'Escape') e.target.blur(); return; }
+  if(e.key === '/'){ e.preventDefault(); document.getElementById('search').focus(); }
+});
+
+init();
+</script>
+
+</body>
+</html>

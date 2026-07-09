@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>視覺方案總覽 | 台美日韓產業關聯儀表板</title>
+<style>
+  :root{
+    --bg: #FAFAF8;
+    --ink: #1c1c1c;
+    --dim: #6b6b66;
+    --line: #e2e0da;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans TC', sans-serif;
+    --mono: ui-monospace, 'Cascadia Code', 'Consolas', monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#161614; --ink:#e8e6e0; --dim:#98958c; --line:#2e2d29; }
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    background:var(--bg); color:var(--ink); font-family:var(--sans);
+    font-size:15px; line-height:1.7; padding:48px 24px 96px;
+  }
+  .wrap{ max-width:880px; margin:0 auto; }
+  h1{ font-size:26px; font-weight:700; letter-spacing:0.01em; }
+  .sub{ color:var(--dim); margin-top:8px; font-size:14px; }
+  .note{
+    margin-top:20px; padding:14px 18px; border:1px solid var(--line); border-radius:8px;
+    font-size:13.5px; color:var(--dim);
+  }
+  .note b{ color:var(--ink); }
+
+  .proposal{
+    margin-top:40px; border:1px solid var(--line); border-radius:12px; overflow:hidden;
+  }
+  .p-head{ padding:20px 24px 16px; }
+  .p-tag{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.1em; color:var(--dim);
+    text-transform:uppercase;
+  }
+  .p-head h2{ font-size:20px; font-weight:700; margin-top:6px; }
+  .p-head h2 a{ color:inherit; text-decoration:none; border-bottom:2px solid var(--line); }
+  .p-head h2 a:hover{ border-color:var(--ink); }
+  .p-anchor{ font-size:13px; color:var(--dim); margin-top:4px; }
+
+  .p-preview{ display:block; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .p-preview iframe{
+    display:block; width:200%; height:640px; border:none;
+    transform:scale(0.5); transform-origin:0 0; pointer-events:none;
+  }
+  .p-preview-clip{ height:320px; overflow:hidden; position:relative; }
+  .p-preview-clip::after{
+    content:'點擊放大檢視 ↗'; position:absolute; inset:auto 0 0 0; padding:32px 0 10px;
+    text-align:center; font-size:12px; color:#fff;
+    background:linear-gradient(transparent, rgba(0,0,0,0.55));
+    opacity:0; transition:opacity 0.2s;
+  }
+  .p-preview:hover .p-preview-clip::after{ opacity:1; }
+
+  .p-body{ padding:18px 24px 22px; display:grid; grid-template-columns:1fr 1fr; gap:8px 32px; }
+  .p-body h3{
+    font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--dim);
+    font-weight:600; margin-bottom:6px;
+  }
+  .p-body ul{ list-style:none; font-size:13.5px; }
+  .p-body li{ padding:3px 0 3px 14px; position:relative; }
+  .p-body li::before{ content:'—'; position:absolute; left:0; color:var(--dim); }
+  .p-fit{ grid-column:1 / -1; font-size:14px; padding-bottom:6px; }
+
+  @media (max-width:640px){
+    .p-body{ grid-template-columns:1fr; }
+    .p-preview iframe{ width:285%; transform:scale(0.35); height:915px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>視覺方案總覽</h1>
+  <p class="sub">台美日韓產業關聯儀表板 — 三個視覺改版方向,各來自不同設計流派,接的都是真實資料(data/groups.json + latest.json)。點擊任一預覽可全頁檢視、實際操作搜尋與市場篩選。</p>
+  <div class="note">
+    三個方案皆保留台股慣例<b>紅漲綠跌</b>與現有功能(搜尋、市場篩選、產業分組)。
+    決定方向後,選定的方案會取代根目錄的 <b>index.html</b> 成為正式版面,其餘兩案可刪除或留檔。
+  </div>
+
+  <!-- 方案 A -->
+  <section class="proposal">
+    <div class="p-head">
+      <div class="p-tag">Proposal A · 資訊架構派 Information Architecture</div>
+      <h2><a href="proposal-a-terminal.html">終端機風格 — Bloomberg Terminal</a></h2>
+      <div class="p-anchor">錨點:Bloomberg Terminal|琥珀金 × 深藍黑 × 等寬字 × 極高資訊密度</div>
+    </div>
+    <a class="p-preview" href="proposal-a-terminal.html">
+      <div class="p-preview-clip"><iframe src="proposal-a-terminal.html" title="方案 A 預覽" loading="lazy" tabindex="-1"></iframe></div>
+    </a>
+    <div class="p-body">
+      <p class="p-fit">為「盯盤工具」而生的方向:一個畫面塞進最多面板,適合每週快速掃過 21 個產業組、比對跨市場漲跌。頂部有全市場跑馬燈,支援鍵盤操作(<code>/</code> 搜尋、<code>1–5</code> 切換市場)。</p>
+      <div>
+        <h3>招牌手法</h3>
+        <ul>
+          <li>多面板網格 + 髮絲線分隔,零圓角零陰影</li>
+          <li>琥珀色 #FFA02F 標示最重要資訊</li>
+          <li>等寬字體、表格數字右對齊</li>
+          <li>頂部跑馬燈 + 鍵盤快捷鍵晶片</li>
+        </ul>
+      </div>
+      <div>
+        <h3>取捨</h3>
+        <ul>
+          <li>資訊密度最高,一屏看最多</li>
+          <li>專業感強,但對休閒讀者門檻高</li>
+          <li>手機上密度優勢減弱</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 方案 B -->
+  <section class="proposal">
+    <div class="p-head">
+      <div class="p-tag">Proposal B · 編輯/極簡派 Editorial / Minimalist</div>
+      <h2><a href="proposal-b-editorial.html">財經雜誌風格 — Monocle Magazine</a></h2>
+      <div class="p-anchor">錨點:Monocle 雜誌行情版|米白紙感 × 襯線字 × 編輯紅 × 雜誌欄式排版</div>
+    </div>
+    <a class="p-preview" href="proposal-b-editorial.html">
+      <div class="p-preview-clip"><iframe src="proposal-b-editorial.html" title="方案 B 預覽" loading="lazy" tabindex="-1"></iframe></div>
+    </a>
+    <div class="p-body">
+      <p class="p-fit">把儀表板讀成「一份週報」:雙欄導言 + 首字放大,每個產業組是一篇編號特輯(紅色 kicker → 襯線大標 → 行情表)。編輯紅剛好兼作「漲」、橄欖綠兼作「跌」,一套色票兩用。</p>
+      <div>
+        <h3>招牌手法</h3>
+        <ul>
+          <li>三層階序:紅色小標 → 襯線粗標 → 斜體副標</li>
+          <li>雙欄導言、髮絲欄線、首字放大</li>
+          <li>編號特輯(Feature 01–21)</li>
+          <li>唯一亮色 = 編輯紅 #C7322E</li>
+        </ul>
+      </div>
+      <div>
+        <h3>取捨</h3>
+        <ul>
+          <li>三案中最有識別度、最不像「AI 做的頁面」</li>
+          <li>閱讀感佳,但掃讀效率低於 A/C</li>
+          <li>淺色紙感,夜間盯盤偏亮</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 方案 C -->
+  <section class="proposal">
+    <div class="p-head">
+      <div class="p-tag">Proposal C · 現代工具派 Modern Tool / Builder SaaS</div>
+      <h2><a href="proposal-c-linear.html">現代工具風格 — Linear</a></h2>
+      <div class="p-anchor">錨點:linear.app|暖黑 × 髮絲邊框 × 單一紫色點綴 × 精緻微互動</div>
+    </div>
+    <a class="p-preview" href="proposal-c-linear.html">
+      <div class="p-preview-clip"><iframe src="proposal-c-linear.html" title="方案 C 預覽" loading="lazy" tabindex="-1"></iframe></div>
+    </a>
+    <div class="p-body">
+      <p class="p-fit">最接近現版深色基調、風險最低的升級路線:頂部新增市場統計列(上漲/下跌家數、最強最弱),卡片式產業組、代號用等寬晶片、漲跌配上底色膠囊。互動細節(150ms hover、聚焦光暈)全面提升質感。</p>
+      <div>
+        <h3>招牌手法</h3>
+        <ul>
+          <li>髮絲邊框 rgba(255,255,255,0.06) 貫穿全站</li>
+          <li>紫色 #5E6AD2 只出現在聚焦與點綴(&lt;5%)</li>
+          <li>等寬字晶片(代號、快捷鍵)</li>
+          <li>統計摘要列 + 卡片懸浮微動效</li>
+        </ul>
+      </div>
+      <div>
+        <h3>取捨</h3>
+        <ul>
+          <li>與現版最連續,使用者無適應成本</li>
+          <li>質感精緻,但屬「安全牌」路線</li>
+          <li>識別度介於 A 與 B 之間</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
