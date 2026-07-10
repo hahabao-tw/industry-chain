@@ -1,101 +1,101 @@
 {
-  "generated_at": "2026-07-09T23:59:21.836972+00:00",
+  "generated_at": "2026-07-10T23:50:29.626780+00:00",
   "tickers": {
     "000660.KS": {
       "ticker": "000660.KS",
-      "price": 2186000.0,
-      "prev_close": 2076000.0,
-      "change_pct": 5.3,
+      "price": 2180000.0,
+      "prev_close": 2186000.0,
+      "change_pct": -0.27,
       "currency": "KRW",
-      "market_time": 1783578609,
+      "market_time": 1783665029,
       "ok": true
     },
     "005380.KS": {
       "ticker": "005380.KS",
-      "price": 445500.0,
-      "prev_close": 462500.0,
-      "change_pct": -3.68,
+      "price": 457500.0,
+      "prev_close": 445500.0,
+      "change_pct": 2.69,
       "currency": "KRW",
-      "market_time": 1783578750,
+      "market_time": 1783665018,
       "ok": true
     },
     "005490.KS": {
       "ticker": "005490.KS",
-      "price": 297000.0,
-      "prev_close": 304000.0,
-      "change_pct": -2.3,
+      "price": 313500.0,
+      "prev_close": 297000.0,
+      "change_pct": 5.56,
       "currency": "KRW",
-      "market_time": 1783578618,
+      "market_time": 1783665021,
       "ok": true
     },
     "005930.KS": {
       "ticker": "005930.KS",
-      "price": 278000.0,
-      "prev_close": 277500.0,
-      "change_pct": 0.18,
+      "price": 285000.0,
+      "prev_close": 278000.0,
+      "change_pct": 2.52,
       "currency": "KRW",
-      "market_time": 1783578602,
+      "market_time": 1783665017,
       "ok": true
     },
     "006400.KS": {
       "ticker": "006400.KS",
-      "price": 401500.0,
-      "prev_close": 412000.0,
-      "change_pct": -2.55,
+      "price": 434000.0,
+      "prev_close": 401500.0,
+      "change_pct": 8.09,
       "currency": "KRW",
-      "market_time": 1783578630,
+      "market_time": 1783665027,
       "ok": true
     },
     "009150.KS": {
       "ticker": "009150.KS",
-      "price": 1493000.0,
-      "prev_close": 1479000.0,
-      "change_pct": 0.95,
+      "price": 1584000.0,
+      "prev_close": 1493000.0,
+      "change_pct": 6.1,
       "currency": "KRW",
-      "market_time": 1783578625,
+      "market_time": 1783665013,
       "ok": true
     },
     "009830.KS": {
       "ticker": "009830.KS",
-      "price": 30800.0,
-      "prev_close": 29850.0,
-      "change_pct": 3.18,
+      "price": 31900.0,
+      "prev_close": 30800.0,
+      "change_pct": 3.57,
       "currency": "KRW",
-      "market_time": 1783578606,
+      "market_time": 1783665007,
       "ok": true
     },
     "011200.KS": {
       "ticker": "011200.KS",
-      "price": 19320.0,
-      "prev_close": 20050.0,
-      "change_pct": -3.64,
+      "price": 19740.0,
+      "prev_close": 19320.0,
+      "change_pct": 2.17,
       "currency": "KRW",
-      "market_time": 1783578601,
+      "market_time": 1783665026,
       "ok": true
     },
     "034220.KS": {
       "ticker": "034220.KS",
-      "price": 10680.0,
-      "prev_close": 11240.0,
-      "change_pct": -4.98,
+      "price": 11010.0,
+      "prev_close": 10680.0,
+      "change_pct": 3.09,
       "currency": "KRW",
-      "market_time": 1783578765,
+      "market_time": 1783665024,
       "ok": true
     },
     "105560.KS": {
       "ticker": "105560.KS",
-      "price": 171400.0,
-      "prev_close": 171000.0,
-      "change_pct": 0.23,
+      "price": 184400.0,
+      "prev_close": 171400.0,
+      "change_pct": 7.58,
       "currency": "KRW",
-      "market_time": 1783578613,
+      "market_time": 1783665022,
       "ok": true
     },
     "1536.TW": {
       "ticker": "1536.TW",
       "price": 55.0,
-      "prev_close": 50.0,
-      "change_pct": 10.0,
+      "prev_close": 55.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575001,
       "ok": true
@@ -103,8 +103,8 @@
     "2002.TW": {
       "ticker": "2002.TW",
       "price": 18.55,
-      "prev_close": 18.7,
-      "change_pct": -0.8,
+      "prev_close": 18.55,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575027,
       "ok": true
@@ -112,8 +112,8 @@
     "2014.TW": {
       "ticker": "2014.TW",
       "price": 17.15,
-      "prev_close": 17.2,
-      "change_pct": -0.29,
+      "prev_close": 17.15,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575003,
       "ok": true
@@ -121,26 +121,26 @@
     "2023.TW": {
       "ticker": "2023.TW",
       "price": 13.9,
-      "prev_close": 14.0,
-      "change_pct": -0.71,
+      "prev_close": 13.9,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575035,
       "ok": true
     },
     "207940.KS": {
       "ticker": "207940.KS",
-      "price": 1325000.0,
-      "prev_close": 1363000.0,
-      "change_pct": -2.79,
+      "price": 1395000.0,
+      "prev_close": 1325000.0,
+      "change_pct": 5.28,
       "currency": "KRW",
-      "market_time": 1783578614,
+      "market_time": 1783665009,
       "ok": true
     },
     "2201.TW": {
       "ticker": "2201.TW",
       "price": 28.45,
-      "prev_close": 28.5,
-      "change_pct": -0.18,
+      "prev_close": 28.45,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575008,
       "ok": true
@@ -148,8 +148,8 @@
     "2207.TW": {
       "ticker": "2207.TW",
       "price": 476.5,
-      "prev_close": 480.5,
-      "change_pct": -0.83,
+      "prev_close": 476.5,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575038,
       "ok": true
@@ -157,8 +157,8 @@
     "2301.TW": {
       "ticker": "2301.TW",
       "price": 213.5,
-      "prev_close": 214.0,
-      "change_pct": -0.23,
+      "prev_close": 213.5,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575015,
       "ok": true
@@ -166,8 +166,8 @@
     "2303.TW": {
       "ticker": "2303.TW",
       "price": 156.0,
-      "prev_close": 163.0,
-      "change_pct": -4.29,
+      "prev_close": 156.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575004,
       "ok": true
@@ -175,8 +175,8 @@
     "2308.TW": {
       "ticker": "2308.TW",
       "price": 1880.0,
-      "prev_close": 1885.0,
-      "change_pct": -0.27,
+      "prev_close": 1880.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575013,
       "ok": true
@@ -193,8 +193,8 @@
     "2324.TW": {
       "ticker": "2324.TW",
       "price": 36.6,
-      "prev_close": 35.5,
-      "change_pct": 3.1,
+      "prev_close": 36.6,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575016,
       "ok": true
@@ -202,8 +202,8 @@
     "2327.TW": {
       "ticker": "2327.TW",
       "price": 900.0,
-      "prev_close": 891.0,
-      "change_pct": 1.01,
+      "prev_close": 900.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575001,
       "ok": true
@@ -211,8 +211,8 @@
     "2330.TW": {
       "ticker": "2330.TW",
       "price": 2415.0,
-      "prev_close": 2465.0,
-      "change_pct": -2.03,
+      "prev_close": 2415.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575009,
       "ok": true
@@ -220,8 +220,8 @@
     "2337.TW": {
       "ticker": "2337.TW",
       "price": 143.5,
-      "prev_close": 138.5,
-      "change_pct": 3.61,
+      "prev_close": 143.5,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575005,
       "ok": true
@@ -229,8 +229,8 @@
     "2344.TW": {
       "ticker": "2344.TW",
       "price": 176.5,
-      "prev_close": 168.5,
-      "change_pct": 4.75,
+      "prev_close": 176.5,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575001,
       "ok": true
@@ -238,8 +238,8 @@
     "2356.TW": {
       "ticker": "2356.TW",
       "price": 69.8,
-      "prev_close": 66.2,
-      "change_pct": 5.44,
+      "prev_close": 69.8,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575013,
       "ok": true
@@ -247,8 +247,8 @@
     "2379.TW": {
       "ticker": "2379.TW",
       "price": 840.0,
-      "prev_close": 817.0,
-      "change_pct": 2.82,
+      "prev_close": 840.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575015,
       "ok": true
@@ -256,8 +256,8 @@
     "2382.TW": {
       "ticker": "2382.TW",
       "price": 373.5,
-      "prev_close": 377.0,
-      "change_pct": -0.93,
+      "prev_close": 373.5,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575016,
       "ok": true
@@ -265,8 +265,8 @@
     "2383.TW": {
       "ticker": "2383.TW",
       "price": 5295.0,
-      "prev_close": 5315.0,
-      "change_pct": -0.38,
+      "prev_close": 5295.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575009,
       "ok": true
@@ -274,8 +274,8 @@
     "2404.TW": {
       "ticker": "2404.TW",
       "price": 1215.0,
-      "prev_close": 1200.0,
-      "change_pct": 1.25,
+      "prev_close": 1215.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575026,
       "ok": true
@@ -283,8 +283,8 @@
     "2408.TW": {
       "ticker": "2408.TW",
       "price": 435.5,
-      "prev_close": 396.0,
-      "change_pct": 9.97,
+      "prev_close": 435.5,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575002,
       "ok": true
@@ -292,8 +292,8 @@
     "2409.TW": {
       "ticker": "2409.TW",
       "price": 31.45,
-      "prev_close": 29.55,
-      "change_pct": 6.43,
+      "prev_close": 31.45,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575001,
       "ok": true
@@ -301,8 +301,8 @@
     "2421.TW": {
       "ticker": "2421.TW",
       "price": 142.5,
-      "prev_close": 143.5,
-      "change_pct": -0.7,
+      "prev_close": 142.5,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575007,
       "ok": true
@@ -310,8 +310,8 @@
     "2449.TW": {
       "ticker": "2449.TW",
       "price": 308.5,
-      "prev_close": 305.5,
-      "change_pct": 0.98,
+      "prev_close": 308.5,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575006,
       "ok": true
@@ -319,8 +319,8 @@
     "2454.TW": {
       "ticker": "2454.TW",
       "price": 3925.0,
-      "prev_close": 3995.0,
-      "change_pct": -1.75,
+      "prev_close": 3925.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575017,
       "ok": true
@@ -328,8 +328,8 @@
     "2492.TW": {
       "ticker": "2492.TW",
       "price": 465.5,
-      "prev_close": 474.0,
-      "change_pct": -1.79,
+      "prev_close": 465.5,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575003,
       "ok": true
@@ -337,8 +337,8 @@
     "2603.TW": {
       "ticker": "2603.TW",
       "price": 194.5,
-      "prev_close": 196.0,
-      "change_pct": -0.77,
+      "prev_close": 194.5,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575022,
       "ok": true
@@ -346,8 +346,8 @@
     "2609.TW": {
       "ticker": "2609.TW",
       "price": 51.6,
-      "prev_close": 52.3,
-      "change_pct": -1.34,
+      "prev_close": 51.6,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575025,
       "ok": true
@@ -355,8 +355,8 @@
     "2615.TW": {
       "ticker": "2615.TW",
       "price": 80.4,
-      "prev_close": 79.4,
-      "change_pct": 1.26,
+      "prev_close": 80.4,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575033,
       "ok": true
@@ -364,26 +364,26 @@
     "2634.TW": {
       "ticker": "2634.TW",
       "price": 58.0,
-      "prev_close": 59.6,
-      "change_pct": -2.68,
+      "prev_close": 58.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575010,
       "ok": true
     },
     "285A.T": {
       "ticker": "285A.T",
-      "price": 77860.0,
-      "prev_close": 71870.0,
-      "change_pct": 8.33,
+      "price": 77000.0,
+      "prev_close": 77860.0,
+      "change_pct": -1.1,
       "currency": "JPY",
-      "market_time": 1783578600,
+      "market_time": 1783665000,
       "ok": true
     },
     "2881.TW": {
       "ticker": "2881.TW",
       "price": 124.5,
-      "prev_close": 126.0,
-      "change_pct": -1.19,
+      "prev_close": 124.5,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575013,
       "ok": true
@@ -391,8 +391,8 @@
     "2882.TW": {
       "ticker": "2882.TW",
       "price": 96.3,
-      "prev_close": 98.0,
-      "change_pct": -1.73,
+      "prev_close": 96.3,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575017,
       "ok": true
@@ -400,8 +400,8 @@
     "2886.TW": {
       "ticker": "2886.TW",
       "price": 46.7,
-      "prev_close": 46.8,
-      "change_pct": -0.21,
+      "prev_close": 46.7,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575028,
       "ok": true
@@ -409,8 +409,8 @@
     "2891.TW": {
       "ticker": "2891.TW",
       "price": 69.9,
-      "prev_close": 71.3,
-      "change_pct": -1.96,
+      "prev_close": 69.9,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575021,
       "ok": true
@@ -418,8 +418,8 @@
     "3017.TW": {
       "ticker": "3017.TW",
       "price": 2350.0,
-      "prev_close": 2325.0,
-      "change_pct": 1.08,
+      "prev_close": 2350.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575016,
       "ok": true
@@ -427,8 +427,8 @@
     "3026.TW": {
       "ticker": "3026.TW",
       "price": 1005.0,
-      "prev_close": 953.0,
-      "change_pct": 5.46,
+      "prev_close": 1005.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575008,
       "ok": true
@@ -436,8 +436,8 @@
     "3034.TW": {
       "ticker": "3034.TW",
       "price": 542.0,
-      "prev_close": 544.0,
-      "change_pct": -0.37,
+      "prev_close": 542.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575029,
       "ok": true
@@ -445,8 +445,8 @@
     "3037.TW": {
       "ticker": "3037.TW",
       "price": 875.0,
-      "prev_close": 863.0,
-      "change_pct": 1.39,
+      "prev_close": 875.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575002,
       "ok": true
@@ -454,8 +454,8 @@
     "3044.TW": {
       "ticker": "3044.TW",
       "price": 448.5,
-      "prev_close": 472.0,
-      "change_pct": -4.98,
+      "prev_close": 448.5,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575026,
       "ok": true
@@ -463,8 +463,8 @@
     "3131.TWO": {
       "ticker": "3131.TWO",
       "price": 3305.0,
-      "prev_close": 3110.0,
-      "change_pct": 6.27,
+      "prev_close": 3305.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575019,
       "ok": true
@@ -472,8 +472,8 @@
     "3176.TWO": {
       "ticker": "3176.TWO",
       "price": 38.2,
-      "prev_close": 37.6,
-      "change_pct": 1.6,
+      "prev_close": 38.2,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575016,
       "ok": true
@@ -481,8 +481,8 @@
     "3231.TW": {
       "ticker": "3231.TW",
       "price": 144.5,
-      "prev_close": 146.5,
-      "change_pct": -1.37,
+      "prev_close": 144.5,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575009,
       "ok": true
@@ -490,26 +490,26 @@
     "3324.TWO": {
       "ticker": "3324.TWO",
       "price": 920.0,
-      "prev_close": 925.0,
-      "change_pct": -0.54,
+      "prev_close": 920.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575004,
       "ok": true
     },
     "3436.T": {
       "ticker": "3436.T",
-      "price": 4544.0,
-      "prev_close": 4507.0,
-      "change_pct": 0.82,
+      "price": 5244.0,
+      "prev_close": 4544.0,
+      "change_pct": 15.4,
       "currency": "JPY",
-      "market_time": 1783578600,
+      "market_time": 1783665000,
       "ok": true
     },
     "3481.TW": {
       "ticker": "3481.TW",
       "price": 65.3,
-      "prev_close": 65.2,
-      "change_pct": 0.15,
+      "prev_close": 65.3,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575001,
       "ok": true
@@ -517,8 +517,8 @@
     "3576.TW": {
       "ticker": "3576.TW",
       "price": 16.4,
-      "prev_close": 16.05,
-      "change_pct": 2.18,
+      "prev_close": 16.4,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575005,
       "ok": true
@@ -526,8 +526,8 @@
     "3665.TW": {
       "ticker": "3665.TW",
       "price": 1865.0,
-      "prev_close": 1900.0,
-      "change_pct": -1.84,
+      "prev_close": 1865.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575023,
       "ok": true
@@ -535,35 +535,35 @@
     "3711.TW": {
       "ticker": "3711.TW",
       "price": 677.0,
-      "prev_close": 625.0,
-      "change_pct": 8.32,
+      "prev_close": 677.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575006,
       "ok": true
     },
     "373220.KS": {
       "ticker": "373220.KS",
-      "price": 313500.0,
-      "prev_close": 315500.0,
-      "change_pct": -0.63,
+      "price": 326000.0,
+      "prev_close": 313500.0,
+      "change_pct": 3.99,
       "currency": "KRW",
-      "market_time": 1783578616,
+      "market_time": 1783665007,
       "ok": true
     },
     "4063.T": {
       "ticker": "4063.T",
-      "price": 7010.0,
-      "prev_close": 6920.0,
-      "change_pct": 1.3,
+      "price": 7320.0,
+      "prev_close": 7010.0,
+      "change_pct": 4.42,
       "currency": "JPY",
-      "market_time": 1783578600,
+      "market_time": 1783665000,
       "ok": true
     },
     "4105.TWO": {
       "ticker": "4105.TWO",
       "price": 77.3,
-      "prev_close": 77.2,
-      "change_pct": 0.13,
+      "prev_close": 77.3,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575016,
       "ok": true
@@ -579,18 +579,18 @@
     },
     "4502.T": {
       "ticker": "4502.T",
-      "price": 5398.0,
-      "prev_close": 5451.0,
-      "change_pct": -0.97,
+      "price": 5359.0,
+      "prev_close": 5398.0,
+      "change_pct": -0.72,
       "currency": "JPY",
-      "market_time": 1783578600,
+      "market_time": 1783665000,
       "ok": true
     },
     "4938.TW": {
       "ticker": "4938.TW",
       "price": 82.7,
-      "prev_close": 83.8,
-      "change_pct": -1.31,
+      "prev_close": 82.7,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575029,
       "ok": true
@@ -607,26 +607,26 @@
     "5347.TWO": {
       "ticker": "5347.TWO",
       "price": 173.0,
-      "prev_close": 176.5,
-      "change_pct": -1.98,
+      "prev_close": 173.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575010,
       "ok": true
     },
     "5401.T": {
       "ticker": "5401.T",
-      "price": 556.0,
+      "price": 550.2,
       "prev_close": 556.0,
-      "change_pct": 0.0,
+      "change_pct": -1.04,
       "currency": "JPY",
-      "market_time": 1783578600,
+      "market_time": 1783665000,
       "ok": true
     },
     "5443.TWO": {
       "ticker": "5443.TWO",
       "price": 107.0,
-      "prev_close": 106.5,
-      "change_pct": 0.47,
+      "prev_close": 107.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575006,
       "ok": true
@@ -634,8 +634,8 @@
     "6116.TW": {
       "ticker": "6116.TW",
       "price": 17.2,
-      "prev_close": 17.25,
-      "change_pct": -0.29,
+      "prev_close": 17.2,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575010,
       "ok": true
@@ -643,8 +643,8 @@
     "6182.TWO": {
       "ticker": "6182.TWO",
       "price": 172.5,
-      "prev_close": 160.0,
-      "change_pct": 7.81,
+      "prev_close": 172.5,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575023,
       "ok": true
@@ -652,8 +652,8 @@
     "6239.TW": {
       "ticker": "6239.TW",
       "price": 320.0,
-      "prev_close": 318.0,
-      "change_pct": 0.63,
+      "prev_close": 320.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575005,
       "ok": true
@@ -661,8 +661,8 @@
     "6274.TWO": {
       "ticker": "6274.TWO",
       "price": 1570.0,
-      "prev_close": 1645.0,
-      "change_pct": -4.56,
+      "prev_close": 1570.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575010,
       "ok": true
@@ -670,8 +670,8 @@
     "6443.TW": {
       "ticker": "6443.TW",
       "price": 31.25,
-      "prev_close": 31.5,
-      "change_pct": -0.79,
+      "prev_close": 31.25,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575033,
       "ok": true
@@ -679,8 +679,8 @@
     "6488.TWO": {
       "ticker": "6488.TWO",
       "price": 1350.0,
-      "prev_close": 1230.0,
-      "change_pct": 9.76,
+      "prev_close": 1350.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575002,
       "ok": true
@@ -688,8 +688,8 @@
     "6547.TWO": {
       "ticker": "6547.TWO",
       "price": 47.4,
-      "prev_close": 47.5,
-      "change_pct": -0.21,
+      "prev_close": 47.4,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575036,
       "ok": true
@@ -697,73 +697,73 @@
     "6669.TW": {
       "ticker": "6669.TW",
       "price": 5040.0,
-      "prev_close": 5050.0,
-      "change_pct": -0.2,
+      "prev_close": 5040.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575037,
       "ok": true
     },
     "6740.T": {
       "ticker": "6740.T",
-      "price": 50.0,
-      "prev_close": 52.0,
-      "change_pct": -3.85,
+      "price": 52.0,
+      "prev_close": 50.0,
+      "change_pct": 4.0,
       "currency": "JPY",
-      "market_time": 1783578600,
+      "market_time": 1783665000,
       "ok": true
     },
     "6752.T": {
       "ticker": "6752.T",
-      "price": 4455.0,
-      "prev_close": 4333.0,
-      "change_pct": 2.82,
+      "price": 4480.0,
+      "prev_close": 4455.0,
+      "change_pct": 0.56,
       "currency": "JPY",
-      "market_time": 1783578600,
+      "market_time": 1783665000,
       "ok": true
     },
     "6762.T": {
       "ticker": "6762.T",
-      "price": 3382.0,
-      "prev_close": 3298.0,
-      "change_pct": 2.55,
+      "price": 3389.0,
+      "prev_close": 3382.0,
+      "change_pct": 0.21,
       "currency": "JPY",
-      "market_time": 1783578600,
+      "market_time": 1783665000,
       "ok": true
     },
     "6770.TW": {
       "ticker": "6770.TW",
       "price": 71.1,
-      "prev_close": 71.2,
-      "change_pct": -0.14,
+      "prev_close": 71.1,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575001,
       "ok": true
     },
     "6981.T": {
       "ticker": "6981.T",
-      "price": 9475.0,
-      "prev_close": 9027.0,
-      "change_pct": 4.96,
+      "price": 9860.0,
+      "prev_close": 9475.0,
+      "change_pct": 4.06,
       "currency": "JPY",
-      "market_time": 1783578600,
+      "market_time": 1783665000,
       "ok": true
     },
     "7203.T": {
       "ticker": "7203.T",
-      "price": 2824.0,
-      "prev_close": 2889.0,
-      "change_pct": -2.25,
+      "price": 2823.0,
+      "prev_close": 2824.0,
+      "change_pct": -0.04,
       "currency": "JPY",
-      "market_time": 1783578600,
+      "market_time": 1783665000,
       "ok": true
     },
     "7267.T": {
       "ticker": "7267.T",
-      "price": 1502.0,
-      "prev_close": 1525.0,
-      "change_pct": -1.51,
+      "price": 1495.5,
+      "prev_close": 1502.0,
+      "change_pct": -0.43,
       "currency": "JPY",
-      "market_time": 1783578600,
+      "market_time": 1783665000,
       "ok": true
     },
     "8033.TWO": {
@@ -777,18 +777,18 @@
     },
     "8035.T": {
       "ticker": "8035.T",
-      "price": 71060.0,
-      "prev_close": 67350.0,
-      "change_pct": 5.51,
+      "price": 72940.0,
+      "prev_close": 71060.0,
+      "change_pct": 2.65,
       "currency": "JPY",
-      "market_time": 1783578600,
+      "market_time": 1783665000,
       "ok": true
     },
     "8046.TW": {
       "ticker": "8046.TW",
       "price": 1215.0,
-      "prev_close": 1105.0,
-      "change_pct": 9.95,
+      "prev_close": 1215.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575008,
       "ok": true
@@ -796,8 +796,8 @@
     "8150.TW": {
       "ticker": "8150.TW",
       "price": 117.0,
-      "prev_close": 106.5,
-      "change_pct": 9.86,
+      "prev_close": 117.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575009,
       "ok": true
@@ -805,280 +805,280 @@
     "8299.TWO": {
       "ticker": "8299.TWO",
       "price": 2220.0,
-      "prev_close": 2140.0,
-      "change_pct": 3.74,
+      "prev_close": 2220.0,
+      "change_pct": 0.0,
       "currency": "TWD",
       "market_time": 1783575018,
       "ok": true
     },
     "8306.T": {
       "ticker": "8306.T",
-      "price": 3414.0,
-      "prev_close": 3433.0,
-      "change_pct": -0.55,
+      "price": 3461.0,
+      "prev_close": 3414.0,
+      "change_pct": 1.38,
       "currency": "JPY",
-      "market_time": 1783578600,
+      "market_time": 1783665000,
       "ok": true
     },
     "9104.T": {
       "ticker": "9104.T",
-      "price": 5478.0,
-      "prev_close": 5421.0,
-      "change_pct": 1.05,
+      "price": 5324.0,
+      "prev_close": 5478.0,
+      "change_pct": -2.81,
       "currency": "JPY",
-      "market_time": 1783578600,
+      "market_time": 1783665000,
       "ok": true
     },
     "9107.T": {
       "ticker": "9107.T",
-      "price": 2581.0,
-      "prev_close": 2549.5,
-      "change_pct": 1.24,
+      "price": 2526.5,
+      "prev_close": 2581.0,
+      "change_pct": -2.11,
       "currency": "JPY",
-      "market_time": 1783578600,
+      "market_time": 1783665000,
       "ok": true
     },
     "AMAT": {
       "ticker": "AMAT",
-      "price": 588.66,
-      "prev_close": 570.5,
-      "change_pct": 3.18,
+      "price": 602.5,
+      "prev_close": 588.66,
+      "change_pct": 2.35,
       "currency": "USD",
-      "market_time": 1783627201,
+      "market_time": 1783713601,
       "ok": true
     },
     "AMD": {
       "ticker": "AMD",
-      "price": 546.72,
-      "prev_close": 517.41,
-      "change_pct": 5.66,
+      "price": 557.89,
+      "prev_close": 546.72,
+      "change_pct": 2.04,
       "currency": "USD",
-      "market_time": 1783627201,
+      "market_time": 1783713601,
       "ok": true
     },
     "AMKR": {
       "ticker": "AMKR",
-      "price": 72.16,
-      "prev_close": 66.91,
-      "change_pct": 7.85,
+      "price": 70.47,
+      "prev_close": 72.16,
+      "change_pct": -2.34,
       "currency": "USD",
-      "market_time": 1783627201,
+      "market_time": 1783713601,
       "ok": true
     },
     "DELL": {
       "ticker": "DELL",
-      "price": 450.22,
-      "prev_close": 431.97,
-      "change_pct": 4.22,
+      "price": 434.97,
+      "prev_close": 450.22,
+      "change_pct": -3.39,
       "currency": "USD",
-      "market_time": 1783627449,
+      "market_time": 1783713848,
       "ok": true
     },
     "ETN": {
       "ticker": "ETN",
-      "price": 405.83,
-      "prev_close": 399.56,
-      "change_pct": 1.57,
+      "price": 407.28,
+      "prev_close": 405.83,
+      "change_pct": 0.36,
       "currency": "USD",
-      "market_time": 1783627202,
+      "market_time": 1783713603,
       "ok": true
     },
     "F": {
       "ticker": "F",
-      "price": 13.61,
-      "prev_close": 13.5,
-      "change_pct": 0.81,
+      "price": 14.0,
+      "prev_close": 13.61,
+      "change_pct": 2.87,
       "currency": "USD",
-      "market_time": 1783627436,
+      "market_time": 1783713824,
       "ok": true
     },
     "FSLR": {
       "ticker": "FSLR",
-      "price": 228.5,
-      "prev_close": 224.3,
-      "change_pct": 1.87,
+      "price": 227.83,
+      "prev_close": 228.5,
+      "change_pct": -0.29,
       "currency": "USD",
-      "market_time": 1783627200,
+      "market_time": 1783713601,
       "ok": true
     },
     "GFS": {
       "ticker": "GFS",
-      "price": 69.71,
-      "prev_close": 67.97,
-      "change_pct": 2.56,
+      "price": 68.97,
+      "prev_close": 69.71,
+      "change_pct": -1.06,
       "currency": "USD",
-      "market_time": 1783627201,
+      "market_time": 1783713601,
       "ok": true
     },
     "GM": {
       "ticker": "GM",
-      "price": 76.65,
-      "prev_close": 76.24,
-      "change_pct": 0.54,
+      "price": 77.85,
+      "prev_close": 76.65,
+      "change_pct": 1.57,
       "currency": "USD",
-      "market_time": 1783627203,
+      "market_time": 1783713602,
       "ok": true
     },
     "JBL": {
       "ticker": "JBL",
-      "price": 332.51,
-      "prev_close": 325.21,
-      "change_pct": 2.24,
+      "price": 330.29,
+      "prev_close": 332.51,
+      "change_pct": -0.67,
       "currency": "USD",
-      "market_time": 1783627202,
+      "market_time": 1783713602,
       "ok": true
     },
     "JPM": {
       "ticker": "JPM",
-      "price": 335.47,
-      "prev_close": 330.62,
-      "change_pct": 1.47,
+      "price": 336.47,
+      "prev_close": 335.47,
+      "change_pct": 0.3,
       "currency": "USD",
-      "market_time": 1783627202,
+      "market_time": 1783713602,
       "ok": true
     },
     "KLAC": {
       "ticker": "KLAC",
-      "price": 229.52,
-      "prev_close": 221.18,
-      "change_pct": 3.77,
+      "price": 231.52,
+      "prev_close": 229.52,
+      "change_pct": 0.87,
       "currency": "USD",
-      "market_time": 1783627200,
+      "market_time": 1783713601,
       "ok": true
     },
     "LMT": {
       "ticker": "LMT",
-      "price": 518.26,
-      "prev_close": 527.96,
-      "change_pct": -1.84,
+      "price": 523.22,
+      "prev_close": 518.26,
+      "change_pct": 0.96,
       "currency": "USD",
-      "market_time": 1783627202,
+      "market_time": 1783713602,
       "ok": true
     },
     "LRCX": {
       "ticker": "LRCX",
-      "price": 353.17,
-      "prev_close": 333.15,
-      "change_pct": 6.01,
+      "price": 350.33,
+      "prev_close": 353.17,
+      "change_pct": -0.8,
       "currency": "USD",
-      "market_time": 1783627201,
+      "market_time": 1783713601,
       "ok": true
     },
     "MRNA": {
       "ticker": "MRNA",
-      "price": 76.56,
-      "prev_close": 73.8,
-      "change_pct": 3.74,
+      "price": 68.27,
+      "prev_close": 76.56,
+      "change_pct": -10.83,
       "currency": "USD",
-      "market_time": 1783627201,
+      "market_time": 1783713601,
       "ok": true
     },
     "MU": {
       "ticker": "MU",
-      "price": 991.64,
-      "prev_close": 948.8,
-      "change_pct": 4.52,
+      "price": 979.3,
+      "prev_close": 991.64,
+      "change_pct": -1.24,
       "currency": "USD",
-      "market_time": 1783627201,
+      "market_time": 1783713601,
       "ok": true
     },
     "NUE": {
       "ticker": "NUE",
-      "price": 222.28,
-      "prev_close": 226.68,
-      "change_pct": -1.94,
+      "price": 227.37,
+      "prev_close": 222.28,
+      "change_pct": 2.29,
       "currency": "USD",
-      "market_time": 1783627202,
+      "market_time": 1783713602,
       "ok": true
     },
     "NVDA": {
       "ticker": "NVDA",
-      "price": 202.78,
-      "prev_close": 204.12,
-      "change_pct": -0.66,
+      "price": 210.96,
+      "prev_close": 202.78,
+      "change_pct": 4.03,
       "currency": "USD",
-      "market_time": 1783627200,
+      "market_time": 1783713600,
       "ok": true
     },
     "ONDS": {
       "ticker": "ONDS",
-      "price": 7.65,
-      "prev_close": 7.52,
-      "change_pct": 1.73,
+      "price": 7.26,
+      "prev_close": 7.65,
+      "change_pct": -5.1,
       "currency": "USD",
-      "market_time": 1783627200,
+      "market_time": 1783713600,
       "ok": true
     },
     "PFE": {
       "ticker": "PFE",
-      "price": 24.25,
-      "prev_close": 24.05,
-      "change_pct": 0.83,
+      "price": 24.17,
+      "prev_close": 24.25,
+      "change_pct": -0.33,
       "currency": "USD",
-      "market_time": 1783627307,
+      "market_time": 1783713708,
       "ok": true
     },
     "QCOM": {
       "ticker": "QCOM",
-      "price": 191.11,
-      "prev_close": 186.56,
-      "change_pct": 2.44,
+      "price": 189.16,
+      "prev_close": 191.11,
+      "change_pct": -1.02,
       "currency": "USD",
-      "market_time": 1783627200,
+      "market_time": 1783713600,
       "ok": true
     },
     "RTX": {
       "ticker": "RTX",
-      "price": 195.2,
-      "prev_close": 194.91,
-      "change_pct": 0.15,
+      "price": 195.93,
+      "prev_close": 195.2,
+      "change_pct": 0.37,
       "currency": "USD",
-      "market_time": 1783627202,
+      "market_time": 1783713602,
       "ok": true
     },
     "SMCI": {
       "ticker": "SMCI",
-      "price": 28.24,
-      "prev_close": 28.17,
+      "price": 28.31,
+      "prev_close": 28.24,
       "change_pct": 0.25,
       "currency": "USD",
-      "market_time": 1783627200,
+      "market_time": 1783713600,
       "ok": true
     },
     "TSLA": {
       "ticker": "TSLA",
-      "price": 406.55,
-      "prev_close": 394.06,
-      "change_pct": 3.17,
+      "price": 407.76,
+      "prev_close": 406.55,
+      "change_pct": 0.3,
       "currency": "USD",
-      "market_time": 1783627200,
+      "market_time": 1783713600,
       "ok": true
     },
     "TTMI": {
       "ticker": "TTMI",
-      "price": 149.97,
-      "prev_close": 145.29,
-      "change_pct": 3.22,
+      "price": 146.44,
+      "prev_close": 149.97,
+      "change_pct": -2.35,
       "currency": "USD",
-      "market_time": 1783627200,
+      "market_time": 1783713600,
       "ok": true
     },
     "VRT": {
       "ticker": "VRT",
-      "price": 323.92,
-      "prev_close": 317.81,
-      "change_pct": 1.92,
+      "price": 318.86,
+      "prev_close": 323.92,
+      "change_pct": -1.56,
       "currency": "USD",
-      "market_time": 1783627203,
+      "market_time": 1783713602,
       "ok": true
     },
     "VSH": {
       "ticker": "VSH",
-      "price": 44.04,
-      "prev_close": 42.19,
-      "change_pct": 4.38,
+      "price": 44.67,
+      "prev_close": 44.04,
+      "change_pct": 1.43,
       "currency": "USD",
-      "market_time": 1783627413,
+      "market_time": 1783713781,
       "ok": true
     }
   }
