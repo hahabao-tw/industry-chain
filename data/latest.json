@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T23:57:34.001700+00:00",
+  "generated_at": "2026-07-25T23:53:26.478414+00:00",
   "tickers": {
     "000660.KS": {
       "ticker": "000660.KS",
@@ -304,7 +304,7 @@
       "prev_close": 133.5,
       "change_pct": -2.62,
       "currency": "TWD",
-      "market_time": 1784871013,
+      "market_time": 1784871012,
       "ok": true
     },
     "2449.TW": {
@@ -466,7 +466,7 @@
       "prev_close": 3035.0,
       "change_pct": -5.6,
       "currency": "TWD",
-      "market_time": 1784871020,
+      "market_time": 1784871019,
       "ok": true
     },
     "3176.TWO": {
@@ -592,7 +592,7 @@
       "prev_close": 87.2,
       "change_pct": 1.38,
       "currency": "TWD",
-      "market_time": 1784871009,
+      "market_time": 1784871008,
       "ok": true
     },
     "4967.TW": {
@@ -691,7 +691,7 @@
       "prev_close": 46.8,
       "change_pct": 0.75,
       "currency": "TWD",
-      "market_time": 1784871038,
+      "market_time": 1784871037,
       "ok": true
     },
     "6669.TW": {
