@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T23:26:23.931566+00:00",
+  "generated_at": "2026-08-08T23:19:57.827488+00:00",
   "tickers": {
     "000660.KS": {
       "ticker": "000660.KS",
@@ -412,7 +412,7 @@
       "prev_close": 64.6,
       "change_pct": 1.55,
       "currency": "TWD",
-      "market_time": 1786080614,
+      "market_time": 1786080613,
       "ok": true
     },
     "3017.TW": {
@@ -421,7 +421,7 @@
       "prev_close": 2940.0,
       "change_pct": -5.27,
       "currency": "TWD",
-      "market_time": 1786080611,
+      "market_time": 1786080610,
       "ok": true
     },
     "3026.TW": {
