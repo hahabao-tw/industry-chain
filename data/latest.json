@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T23:19:57.827488+00:00",
+  "generated_at": "2026-08-09T23:22:39.334756+00:00",
   "tickers": {
     "000660.KS": {
       "ticker": "000660.KS",
@@ -1060,7 +1060,7 @@
       "prev_close": 136.36,
       "change_pct": 0.62,
       "currency": "USD",
-      "market_time": 1786132800,
+      "market_time": 1786132801,
       "ok": true
     },
     "VRT": {
